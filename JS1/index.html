@@ -6,6 +6,7 @@
     <title>JavaScript wprowadzenie</title>
 </head>
 <body>
+    <h1>Co potrafi JavaScript?</h1>
     <h2>Przykład 1</h2>
     <p id="przyklad1">JavaScript może zmienić zawartość HTML.</p>
     <button type="button" onclick='document.getElementById("przyklad1").innerHTML = "Hello World!"'>Kliknij mnie!</button>
@@ -13,9 +14,9 @@
     <h2>Przykład 2</h2>
     <p>JavaScript może zmieniać wartości atrybutów HTML.</p>
     <p>W tym przypadku JavaScript zmienia wartość atrybutu src (źródło) obrazu.</p>
-    <button onclick="document.getElementById('myImage').src='pic_bulbon.gif'">Włącz światło</button>
-    <img id="myImage" src="pic_bulboff.gif" style="width:100px">
-    <button onclick="document.getElementById('myImage').src='pic_bulboff.gif'">Wyłącz światło</button>
+    <button onclick="document.getElementById('przyklad2').src='pic_bulbon.gif'">Włącz światło</button>
+    <img id="przyklad2" src="pic_bulboff.gif" style="width:100px">
+    <button onclick="document.getElementById('przyklad2').src='pic_bulboff.gif'">Wyłącz światło</button>
 
     <h2>Przykład 3</h2>
     <p id="przyklad3">JavaScript może zmienić styl elementów HTML.</p>
@@ -24,5 +25,10 @@
     <h2>Przykład 4</h2>
     <p id="przyklad4">JavaScript może ukryć elementy HTML.</p>
     <button type="button" onclick="document.getElementById('przyklad4').style.display='none'">Kliknij!</button>
+
+    <h2>Przykład 5</h2>
+    <p>JavaScript może pokazać ukryte elementy HTML.</p>
+    <p id="przyklad5" style="display:none">Hello JavaScript!</p>
+    <button type="button" onclick="document.getElementById('przyklad5').style.display='block'">Kliknij!</button>
 </body>
 </html>
