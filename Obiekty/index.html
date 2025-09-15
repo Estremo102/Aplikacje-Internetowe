@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+    <title>Obiekty w JS - Zadania</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+</head>
+    <body>
+        <nav class="sidebar">
+            <a href="#zadanie1">Zadanie 1</a>
+            <a href="#zadanie2">Zadanie 2</a>
+            <a href="#zadanie3">Zadanie 3</a>
+            <a href="#zadanie4">Zadanie 4</a>
+            <a href="#zadanie5">Zadanie 5</a>
+            <a href="#zadanie6">Zadanie 6</a>
+            <a href="#zadanie7">Zadanie 7</a>
+        </nav>
+        <div class="content">
+            <h2 id="zadanie1">Zadanie 1</h2>
+            <p>
+                Stwórz 2 obiekty: rectangle i circle. Obiekt <i>rectangle</i> powinien mieć właściwości <i>height</i>, <i>width</i>, natomiast <i>circle</i> właściwość <i>radius</i>. Oba obiekty powinny mieć metodę <i>showArea()</i>, która zwróci pole danej figury.<br><br>
+                Wypisz oba obiekty w konsoli. Wypisz w konsoli teksty podstawiając odpowiednie dane w miejsce kropek:
+                
+                <pre>
+Kwadrat ma szerokość ... i wysokość ...
+Jego pole to ...
+
+Koło ma promień ...
+Jego pole to ...
+                </pre>
+            </p>
+            <h2 id="zadanie2">Zadanie 2</h2>
+            <p>
+                Stwórz obiekt <b>currentUser</b>. Obiekt niech ma właściwości: <i>name</i>, <i>surname</i>, <i>email</i>, <i>www</i>, <i>userType</i>, <i>isActive</i>.<br>
+                oraz metodę <i>show()</i>, która wypisze wszystkie te właściwości w konsoli. <br>
+                Dodatkowo stwórz metodę <i>setActive(active)</i>, która przestawi właściwość <i>isActive</i> na przekazaną wartość, która może być true/false.
+            </p>
+            <h2 id="zadanie3">Zadanie 3</h2>
+            <p>
+                Stwórz obiekt <b>book</b>, który będzie miał właściwości: <i>title</i>, <i>author</i>, <i>pageCount</i>, <i>publisher</i>.<br>
+                oraz metodę: <i>showDetails()</i>, która zrobi pętlę po tym obiekcie wypisując wszystkie jego klucze oraz ich wartości. Metoda ta nie powinna wypisywać tylko funkcji <i>showDetails()</i>.<br>
+                Wypisywanie właściwości wykonaj za pomocą pętli for in, oraz pętli po kolekcjach <i>Object.keys()</i>, <i>Object.values()</i>, <i>Object.entries()</i>.
+            </p>
+            <h2 id="zadanie4">Zadanie 4</h2>
+            <p>
+              Stwórz prosty obiekt <b>spaceShip</b>, który będzie miał: <br>
+              <ul>
+                <b>Właściwości:</b>
+                <li><b>name</b> ustawioną na Enterprise</li>
+                <li><b>currentLocation</b> ustawioną na Earth</li>
+                <li><b>flyDistance</b> ustawione na 0</li>
+              </ul>
+              <ul>
+                <b>Metody:</b>
+                <li><b>flyTo(place, distance)</b>, która ustawi obiektowi właściwość currentLocation na odpowiednie miejsce podane w parametrze <i>place</i> oraz doliczy przebyty dystans do <i>flyDistance</i>.</li>
+                <li>Metodę <b>showInfo()</b>, która wypisze w konsoli tekst:
+                    <pre>
+Informacje o statku:
+----
+Statek ....
+doleciał do miejsca .....
+Statek przeleciał już całkowity dystans ....
+                    </pre>
+                </li>
+                <li>Metodę <b>meetClingon()</b>, która wykona 100 losowań 0-1. Jeżeli minimum połowa będzie pozytywna (większa niż połowa), wtedy powinna wypisać w konsoli:
+                    <pre>Statek .... będący w okolicy .... zwycięsko wyszedł ze spotkania z Klingonami</pre>
+                    jeżeli jednak mniej niż połowa będzie pozytywna, powinien pojawić się żółty tekst w konsoli (console.alert)
+                    <pre>Statek .... będący w okolicy .... został pokonany przez Klingonów</pre>
+                </li>
+              </ul>  
+            </p>
+            <h2 id="zadanie5">Zadanie 5</h2>
+            <p>
+                Stwórz obiekt book, który będzie miał:
+                <ul>
+                    <b>Właściwości:</b>
+                    <li><b>users</b> która będzie tablicą użytkowników (na początku pusta)</li>
+                </ul>
+                <ul>
+                    <b>Metody:</b>
+                    <li>
+                        <b>addUser(name, age, phone)</b><br>
+                        która doda to tablicy users nowy obiekt, który będzie miał klucze: name, age, phone z przekazanymi do tej funkcji danymi
+                    </li>
+                    <li>
+                        <b>showUsers()</b><br>
+                        która po odpaleniu wypisze w konsoli tekst: Wszyscy użytkownicy w książce a następnie w pętli wypisze wszystkich użytkowników
+                    </li>
+                    <li>
+                        <b>findByName(name)</b><br>
+                        która wypisze w konsoli pierwszego użytkownika, który ma szukane imię lub false jeżeli nie znajdzie.
+                    </li>
+                    <li>
+                        <b>findByPhone(phone)</b><br>
+                        która wypisze w konsoli pierwszego użytkownika, który ma szukany telefon lub false jeżeli nie znajdzie
+                    </li>
+                    <li>
+                        <b>getCount()</b><br>
+                        która wypisze ile jest użytkowników w tabeli
+                    </li>
+                </ul>
+            </p>
+            <h2 id="zadanie6">Zadanie 6</h2>
+            <p>
+                Stwórz obiekt o nazwie <b>tableGenerator</b>. Obiekt ten powinien mieć tylko metody:
+                <ol>
+                    <li>
+                        <b>randomNumber(min, max)</b><br>
+                        zwraca losową liczbę z przedziału min-max
+                    </li>
+                    <li>
+                        <b>generateIncTable(nr)</b><br>
+                        zwraca nową tablicę z liczbami od 0 do nr
+                    </li>
+                    <li>
+                        <b>generateRandomTable(lng, min, max)</b><br>
+                        zwraca nową tablice o długości lng z losowymi liczbami z przedziału min-max
+                    </li>
+                    <li>
+                       <b>generateTableFromText(str)</b><br>
+                        generuje nową tablicę ze słowami z tekstu <i>str</i> Jeżeli przekazany tekst nie jest tekstem, wtedy powinna być zwrócona pusta tablica Wykorzystaj odpowiednią metodę dla String
+                    </li>
+                    <li>
+                        <b>getMaxFromTable(arr)</b><br>
+                        zwraca największą liczbę z tablicy <i>arr</i>
+                    </li>
+                    <li>
+                        <b>getMinFromTable(arr)</b><br>
+                        zwraca najmniejszą liczbę z tablicy <i>arr</i>
+                    </li>
+                    <li>
+                        <b>delete(arr, index)</b><br>
+                        usuwa z tablicy <i>arr</i> element o indexie index
+                    </li>
+                </ol>
+            </p>
+            <h2 id="zadanie7">Zadanie 7</h2>
+            <p>
+                Stwórz obiekt o nazwie <b>text</b>. Obiekt ten powinien mieć metody:
+                <ol>
+                    <li>
+                        check(txt, word)<br>
+                        która zwraca true/false jeżeli w tekście <i>txt</i> znajduje się szukane słowo <i>word</i>
+                        <pre>
+check("ala ma kota", "kota")
+---> true
+                        </pre>
+                    </li>
+                    <li>
+                        <b>getCount(txt)</b><br>
+                        Zwraca liczbę liter w tekście txt. Uwaga znaki interpunkcyjne też traktujmy jako litery
+                        <pre>
+getCount("ala ma kota")
+---> 11
+                        </pre>
+                    </li>
+                    <li>
+                        <b>getWordsCount(txt)</b><br>
+                        zwraca liczbę słów w przekazanym tekście
+                        <pre>
+getWordsCount("Ala ma kota")
+---> 3
+                        </pre>
+                    </li>
+                    <li>
+                        <b>setCapitalize(txt)</b><br>
+                        zwraca nowy tekst tak zamieniony, że każde słowo zaczyna się z dużej litery
+                        <pre>
+setCapitalize("ala ma kota")
+---> "Ala Ma Kota"
+                        </pre>
+                    </li>
+                    <li>
+                      <b>setMix(txt)</b><br>
+                        zwraca nowy tekst z naprzemiennie dużymi/małymi literami. Spację i znaki interpunkcyjne traktujemy jako litery.
+                        <pre>
+setMix("ala ma kota")
+---> "aLa mA KoTa"
+                        </pre>
+                    </li>
+                    <li>
+                        <b>generateRandom(lng)</b><br>
+                        Generuje tekst o długości lng, który składa się z losowych liter
+                        <pre>
+generateRandom(10)
+---> "dkjiuhtjox"
+                        </pre>
+                    </li>
+                </ol>
+            </p>
+        </div>
+    <script src="solution.js"></script>
+    <script src="solution-check.js"></script>
+    </body>
+</body>
+</html>
