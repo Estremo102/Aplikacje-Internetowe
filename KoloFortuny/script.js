@@ -25,11 +25,7 @@ function Losuj(){
     Wyswielt();
     let uczniowie = document.getElementsByClassName("uczen");
     let random = Math.floor(Math.random()*uczniowie.length);
-    for(let i = 0; i < uczniowie.length; i++){
-        if(i==random){
-            uczniowie[i].className = "wylosowanyUczen";
-        }
-    }
+    uczniowie[random].className = "wylosowanyUczen";
 }
 
 // lista.innerHTML = "<li>" + uczniowie.join("</li><li>") + "</li>";
