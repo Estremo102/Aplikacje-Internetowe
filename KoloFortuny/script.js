@@ -23,7 +23,8 @@ function Wyswielt()
 
 function Losuj(){
     Wyswielt();
-    let uczniowie = document.getElementsByClassName("uczen");
+    // let uczniowie = document.getElementsByClassName("uczen");
+    let uczniowie = document.querySelectorAll("#lista .uczen");
     let random = Math.floor(Math.random()*uczniowie.length);
     uczniowie[random].className = "wylosowanyUczen";
 }
