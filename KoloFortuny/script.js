@@ -30,6 +30,6 @@ function Losuj(strikes){
     }else{
         random = strikes%uczniowie.length;
     }
+    uczniowie[random].className = "wylosowanyUczen";
 }
 
-// lista.innerHTML = "<li>" + uczniowie.join("</li><li>") + "</li>";
