@@ -13,11 +13,7 @@ function Wyswielt()
 {
     lista.innerHTML = "";
     for(let i = 0; i < uczniowie.length; i++){
-        // if(i==random){
-        //     lista.innerHTML += `<li><div class="wylosowanyUczen">${uczniowie[i]}</div></li>`;
-        // }else{
-            lista.innerHTML += `<li><div class="uczen">${uczniowie[i]}</div></li>`;
-        // }
+        lista.innerHTML += `<li><div class="uczen">${uczniowie[i]}</div></li>`;
     }
 }
 
@@ -30,6 +26,6 @@ function Losuj(strikes){
     }else{
         random = strikes%uczniowie.length;
     }
-    uczniowie[random].className = "wylosowanyUczen";
+    uczniowie[random].id = "wylosowanyUczen";
 }
 

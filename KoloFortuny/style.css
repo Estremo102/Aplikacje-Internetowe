@@ -34,7 +34,7 @@ body{
     min-height: 80vh;
 }
 
-.uczen, .wylosowanyUczen{
+.uczen{
     border: 1px solid black;
     background-color: #888;
     width: 250px;
@@ -44,7 +44,7 @@ body{
     font-size: 20px;
 }
 
-.wylosowanyUczen{
+#wylosowanyUczen{
     background-color: #AAA;
     color: red;
     font-weight:900;
