@@ -23,14 +23,13 @@ function Wyswielt()
 
 function Losuj(strikes){
     Wyswielt();
-    let uczniowie = document.getElementsByClassName("uczen");
+    let uczniowie = document.querySelectorAll("#lista .uczen");
     let random;
     if(arguments.length == 0){
         random = Math.floor(Math.random()*uczniowie.length);
     }else{
         random = strikes%uczniowie.length;
     }
-    uczniowie[random].className = "wylosowanyUczen";
 }
 
 // lista.innerHTML = "<li>" + uczniowie.join("</li><li>") + "</li>";
