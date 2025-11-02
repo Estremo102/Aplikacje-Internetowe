@@ -19,6 +19,11 @@ try{
     z4s.innerHTML = window.pierwiastkuj.toString();
 }catch{}
 
+try{
+    let z5s = document.querySelector('#z5s');
+    z5s.innerHTML = window.silnia.toString();
+}catch{}
+
 let code = document.querySelectorAll('pre code');
 code.forEach((block) => {
     block.innerHTML = block.textContent.replace(/return/g, '<span class="pink">return</span>')
@@ -72,6 +77,19 @@ window.onload = function() {
                 if (typeof window.pierwiastkuj !== 'function') return false;
                 if (window.pierwiastkuj(9) !== 3) return false;
                 if (window.pierwiastkuj(27, 3) !== 3) return false;
+                return true;
+            } catch { return false; }
+        },
+        // Zadanie 5
+        () => {
+            try {
+                if (!window.silnia) return false;
+                if (typeof window.silnia !== 'function') return false;
+                if (window.silnia(0) !== 1) return false;
+                if (window.silnia(1) !== 1) return false;
+                if (window.silnia(5) !== 120) return false;
+                if (window.silnia(7) !== 5040) return false;
+                if (window.silnia(-3) !== 0) return false;
                 return true;
             } catch { return false; }
         }
