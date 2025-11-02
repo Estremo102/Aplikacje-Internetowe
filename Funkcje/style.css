@@ -7,7 +7,7 @@ header h1{
     margin: auto;
     width: fit-content;
     color: white;
-
+    padding: 25px;
 }
 
 section{
@@ -22,15 +22,15 @@ header, footer{
     background-color: #555;
     margin: 0;
     padding: 0;
-    height: 10vh;
+    height: 90px;
 }
 
 footer > p {
     color: white;
     text-align: center;
-    line-height: 10vh;
     margin: 0;
-    padding: 0;
+    padding: 30px;
+    font-size: 25px;
 }
 
 .content{
@@ -42,7 +42,7 @@ aside{
     width: 25%;
     margin: 0;
     padding: 0;
-    min-height: 80vh;
+    min-height: calc(100vh-180px);
 }
 
 main{
@@ -50,7 +50,7 @@ main{
     margin: 0;
     padding: 0;
     width: 75%;
-    min-height: 80vh;
+    min-height: calc(100vh-180px);
 }
 
 a{
@@ -87,10 +87,18 @@ pre{
     color: #00bbbb;
 }
 
+.navbox{
+    margin: 0;
+    background-color: #333;
+    position: sticky;
+    top: 0;
+}
+
 nav ul{
     list-style-type: none;
     padding-left: 0;
     display: flex;
+    margin: 0px;
 }
 
 nav ul li{
@@ -106,8 +114,4 @@ nav ul li a{
 
 .done{
     background-color: #27ae60 !important;
-}
-
-.warning{
-    background-color: #e67e22 !important;
 }

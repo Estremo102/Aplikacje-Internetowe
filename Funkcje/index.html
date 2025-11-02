@@ -7,18 +7,22 @@
     <link rel="stylesheet" href="style.css">
     <script src="zadanie1.js" defer></script>
     <script src="zadanie2.js" defer></script>
+    <script src="zadanie3.js" defer></script>
     <script src="script.js" defer></script>
 </head>
 <body>
     <header>
         <h1>Funkcje w JavaScript</h1>
+    </header>
+    <div class="navbox">
         <nav>
             <ul>
                 <li><a href="#zadanie1">Zadanie 1</a></li>
                 <li><a href="#zadanie2">Zadanie 2</a></li>
+                <li><a href="#zadanie3">Zadanie 3</a></li>
             </ul>
         </nav>
-    </header>
+    </div>
     <div class="content">
         <aside>
             <div></div>
@@ -42,7 +46,29 @@
                 <p>Stwórz funkcje które będą przyjmować argumenty a oraz b i będą wykonywać na nich operacje arytmetyczne dodawania i odejmowania.</p>
                 <pre><code id="z2s">//Tutaj znajdzie się twój kod gdy dodasz go do pliku zadanie2.js
 //Nazwij funkcje odpowiednio: dodaj, odejmij</code></pre>
-                </section>
+            </section>
+            <section id="zadanie3">
+                <h2>Zadanie 3</h2>
+                <p>Funkcje mogą również przyjmować nieokreśloną ilość zmiennych, można je odczytać z właściwości arguments, która działa podobnie do tablicy</p>
+                <pre><code>function sum() {
+    let total = 0;
+    for(let i = 0; i &lt; arguments.length; i++) {
+        total+=arguments[i];
+    }
+    return total;
+}</code></pre>
+                <p>Jednak dzisiaj zalecane jest używanie rest operator który zbiera dane do tablicy. aby z niego zkorzystać należy poprzedzić nazwę argumentu trzema kropkami</p>
+                <pre><code>function sum(...numbers) {
+    let total = 0;
+    for(let i = 0; i &lt; numbers.length; i++) {
+        total+=numbers[i];
+    }
+    return total;
+}</code></pre>
+                <p>Stwórz funkcję która będzie przyjmować nieokreśloną ilość argumentów i będzie zwracać ich iloczyn. W przypadku braku argumentów zwróć 1</p>
+                <pre><code id="z3s">//Tutaj znajdzie się twój kod gdy dodasz go do pliku zadanie3.js</code></pre>
+
+            </section>
         </main>
     </div>
     <footer>
