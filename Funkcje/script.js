@@ -14,6 +14,11 @@ try{
     z3s.innerHTML = window.mnoz.toString();
 }catch{}
 
+try{
+    let z4s = document.querySelector('#z4s');
+    z4s.innerHTML = window.pierwiastkuj.toString();
+}catch{}
+
 let code = document.querySelectorAll('pre code');
 code.forEach((block) => {
     block.innerHTML = block.textContent.replace(/return/g, '<span class="pink">return</span>')
@@ -57,6 +62,16 @@ window.onload = function() {
                 if (window.mnoz(2,3,4) !== 24) return false;
                 if (window.mnoz(1,2,3,4,5) !== 120) return false;
                 if (window.mnoz() !== 1 ) return false;
+                return true;
+            } catch { return false; }
+        },
+        // Zadanie 4
+        () => {
+            try {
+                if (!window.pierwiastkuj) return false;
+                if (typeof window.pierwiastkuj !== 'function') return false;
+                if (window.pierwiastkuj(9) !== 3) return false;
+                if (window.pierwiastkuj(27, 3) !== 3) return false;
                 return true;
             } catch { return false; }
         }

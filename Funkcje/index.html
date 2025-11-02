@@ -8,6 +8,7 @@
     <script src="zadanie1.js" defer></script>
     <script src="zadanie2.js" defer></script>
     <script src="zadanie3.js" defer></script>
+    <script src="zadanie4.js" defer></script>
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -20,6 +21,7 @@
                 <li><a href="#zadanie1">Zadanie 1</a></li>
                 <li><a href="#zadanie2">Zadanie 2</a></li>
                 <li><a href="#zadanie3">Zadanie 3</a></li>
+                <li><a href="#zadanie4">Zadanie 4</a></li>
             </ul>
         </nav>
     </div>
@@ -67,7 +69,19 @@
 }</code></pre>
                 <p>Stwórz funkcję która będzie przyjmować nieokreśloną ilość argumentów i będzie zwracać ich iloczyn. W przypadku braku argumentów zwróć 1</p>
                 <pre><code id="z3s">//Tutaj znajdzie się twój kod gdy dodasz go do pliku zadanie3.js</code></pre>
+            </section>
+            <section id="zadanie4">
+                <h2>Zadanie 4</h2>
+                <p>Jeśli funkcja wymaga wartości i nie zostanie ona podana podczas jej wywołania będzie mieć wartość undefined, możemy jednak zmienić wartość domyślną używając operatora przypisania</p>
+                <pre><code>function greet(name = "Gość") {
+    return "Witaj, " + name + "!";
+}
 
+greet("Jan"); //Witaj Jan!
+greet(); //Witaj Gość!<code></pre>
+                <p>Napisz funkcję pierwiastkuj która będzie przyjmować argument x który będzie przyjmować pierwiastkowaną liczbę i <code>stopien</code> który będzie przyjmować stopień pierwiastka oraz w przypadku nie podania będzie liczyć pierwiastek kwadratowy</p>
+                wykorzystaj wbudowaną funkcję <code>Math.pow()</code> która przyjmuje dwa argumenty, podstawę oraz wykładnik potęgi. Jeśli podzielisz 1 przez stopien obliczysz pierwiastek.
+                <pre><code id="z4s">//Tutaj znajdzie się twój kod gdy dodasz go do pliku zadanie4.js</code></pre>
             </section>
         </main>
     </div>
