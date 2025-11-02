@@ -2,4 +2,6 @@
 
 
 // Kod do testów, nie usuwać
-window.f = f;
+try{
+    window.f = f;
+}catch{}

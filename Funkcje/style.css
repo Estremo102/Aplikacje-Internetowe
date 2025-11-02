@@ -107,3 +107,7 @@ nav ul li a{
 .done{
     background-color: #27ae60 !important;
 }
+
+.warning{
+    background-color: #e67e22 !important;
+}
