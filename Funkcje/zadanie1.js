@@ -1,0 +1,5 @@
+//Tutaj umieść rozwiązanie zadania 1
+
+
+// Kod do testów, nie usuwać
+window.f = f;
