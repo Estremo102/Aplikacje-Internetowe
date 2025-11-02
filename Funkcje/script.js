@@ -94,11 +94,13 @@ window.onload = function() {
             } catch { return false; }
         }
     ];
-
+    let correct = 0;
     const navLinks = document.querySelectorAll('nav ul li');
     checks.forEach((check, i) => {
         if (check()) {
             navLinks[i].classList.add('done');
+            correct++;
         }
     });
+    document.querySelector('aside div').innerHTML += `<br><br>Liczba poprawnie wykonanych zadań: ${correct} / 5`;
 }

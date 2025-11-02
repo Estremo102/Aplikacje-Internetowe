@@ -92,6 +92,18 @@ pre{
     background-color: #333;
     position: sticky;
     top: 0;
+    height: 40px;
+}
+
+aside div{
+    position: sticky;
+    height: auto;
+    top: 40px;
+    font-weight: 900;
+    font-size: 30px;
+    padding: 1.5%;
+    text-align: center;
+    background-color: #807777;
 }
 
 nav ul{
