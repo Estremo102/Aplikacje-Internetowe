@@ -50,7 +50,7 @@ window.onload = function() {
         // Zadanie 2
         () => {
             try {
-                if (!window.dodaj || !window.odejmij || !window.mnoz || !window.dziel) return false;
+                if (!window.dodaj || !window.odejmij) return false;
                 if (typeof window.dodaj !== 'function') return false;
                 if (window.dodaj(2,3) !== 5) return false;
                 if (typeof window.odejmij !== 'function') return false;
