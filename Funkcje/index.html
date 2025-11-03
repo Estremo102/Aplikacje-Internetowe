@@ -94,6 +94,15 @@ greet(); //Witaj Gość!<code></pre>
             <section id="zadanie 5">
                 <h2>Zadanie 5</h2>
                 <p>Funkcja może odwoływać się do samej siebie. Takie coś nazywamy rekurencją.</p>
+                <pre><code>function fibonacci(x){
+    if(x&lt=0){
+        return 0;
+    }
+    if(x == 1 || x == 2){
+        return 1;
+    }
+    return fibonacci(x-1) + fibonacci(x-2);
+}</code></pre>
                 <p>Zaimplementuj funkcję o nazwie silnia obliczającą silnie. Silnia jest zdefiniowana jedynie dla liczb dodatnich. W przypadku podania liczb ujemnych zwróć wartość 0.</p>
                 <pre><code id="z5s">//Tutaj znajdzie się twój kod gdy dodasz go do pliku zadanie5.js</code></pre>
             </section>
