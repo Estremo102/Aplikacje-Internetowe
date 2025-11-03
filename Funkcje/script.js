@@ -33,7 +33,8 @@ code.forEach((block) => {
     .replace(/function/g, '<span class="yellow">function</span>')
     .replace(/Math./g, '<span class="lightblue">Math</span>.')
     .replace('.pow', '.<span class="yellow">pow</span>')
-    .replace(/for/g, '<span class="pink">for</span>');
+    .replace(/for/g, '<span class="pink">for</span>')
+    .replace(/if/g, '<span class="pink">if</span>');
 });
 
 window.onload = function() {
