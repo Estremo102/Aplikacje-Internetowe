@@ -78,6 +78,7 @@ window.onload = function() {
                 if (typeof window.pierwiastkuj !== 'function') return false;
                 if (window.pierwiastkuj(9) !== 3) return false;
                 if (window.pierwiastkuj(27, 3) !== 3) return false;
+                if (window.pierwiastkuj(27, 3, 8) !== 3) return false;
                 return true;
             } catch { return false; }
         },
