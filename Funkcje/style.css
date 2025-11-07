@@ -60,31 +60,31 @@ a{
 pre{
     width: 90%;
     margin: 20px auto;
-    background-color: #222;
-    color:#EEE;
+    background-color: #1E1E1E;
+    color: #D4D4D4;
     padding: 2px 4px;
     border-radius: 4px;
     font-family: 'Courier New', Courier, monospace;
 }
 
 .green{
-    color: #006000;
+    color: #6A9955;  
 }
 
 .pink{
-    color: #bb00bb;
+    color: #C586C0;  
 }
 
 .yellow{
-    color: #bbbb00;
+    color: #DCDCAA; 
 }
 
 .blue{
-    color: #0303e6;
+    color: #4FC1FF; 
 }
 
 .lightblue{
-    color: #00bbbb;
+    color: #569CD6; 
 }
 
 .navbox{
