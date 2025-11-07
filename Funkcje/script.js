@@ -25,17 +25,18 @@ try{
 }catch{}
 
 let code = document.querySelectorAll('pre code');
-code.forEach((block) => {
-    block.innerHTML = block.textContent.replace(/return/g, '<span class="pink">return</span>')
-    .replace(/\/\/.*/g, (match) => `<span class="green">${match}</span>`)
-    .replace(/\/\*[\s\S]*?\*\//g, (match) => `<span class="green">${match}</span>`)
-    .replace(/function\s+([a-zA-Z_$][0-9a-zA-Z_$]*)/g, 'function <span class="blue">$1</span>')
-    .replace(/function/g, '<span class="yellow">function</span>')
-    .replace(/Math./g, '<span class="lightblue">Math</span>.')
-    .replace('.pow', '.<span class="yellow">pow</span>')
-    .replace(/for/g, '<span class="pink">for</span>')
-    .replace(/if/g, '<span class="pink">if</span>');
-});
+for (const block of code) {
+    block.innerHTML = block.textContent
+        .replace(/return/g, '<span class="pink">return</span>')
+        .replace(/\/\/.*/g, (match) => `<span class="green">${match}</span>`)
+        .replace(/\/\*[\s\S]*?\*\//g, (match) => `<span class="green">${match}</span>`)
+        .replace(/function\s+([a-zA-Z_$][0-9a-zA-Z_$]*)/g, 'function <span class="blue">$1</span>')
+        .replace(/function/g, '<span class="yellow">function</span>')
+        .replace(/Math./g, '<span class="lightblue">Math</span>.')
+        .replace('.pow', '.<span class="yellow">pow</span>')
+        .replace(/for/g, '<span class="pink">for</span>')
+        .replace(/if/g, '<span class="pink">if</span>');
+}
 
 window.onload = function() {
     const checks = [
