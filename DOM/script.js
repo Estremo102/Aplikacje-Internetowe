@@ -119,6 +119,27 @@ window.onload = function() {
         // Zadanie 4
         () => {
             try {
+                const d = document.querySelector("#RGB");
+                const originalBg = d.style.backgroundColor;
+                const eventR = new KeyboardEvent('keydown', { key: 'r' });
+                window.dispatchEvent(eventR);
+                if (d.style.backgroundColor !== 'red') {
+                    d.style.backgroundColor = originalBg;
+                    return false;
+                }
+                const eventG = new KeyboardEvent('keydown', { key: 'g' });
+                window.dispatchEvent(eventG);
+                if (d.style.backgroundColor !== 'green') {
+                    d.style.backgroundColor = originalBg;
+                    return false;
+                }
+                const eventB = new KeyboardEvent('keydown', { key: 'b' });
+                window.dispatchEvent(eventB);
+                if (d.style.backgroundColor !== 'blue') {
+                    d.style.backgroundColor = originalBg;
+                    return false;
+                }
+                d.style.backgroundColor = originalBg;
                 return true;
             } catch { return false; }
         },

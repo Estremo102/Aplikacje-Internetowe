@@ -220,7 +220,38 @@ btn.addEventListener("click", klik);</code></pre>
             </section>
             <section id="zadanie4">
                 <h2>Zadanie 4</h2>
-                
+                <p>Aby odczytać, który klawisz został naciśnięty możemy posłużyć się dwoma właściwościami: event.key oraz event.code</p>
+                <pre><code>const input = document.querySelector("#keyTestEvent")
+const div = document.querySelector("#keyTestEventShow");
+
+input.addEventListener("keydown", e => {
+    div.innerHTML = `
+        e.key: <b>${e.key}</b><br>
+        e.code: <b>${e.code}</b><br>
+        e.keyCode: <b>${e.keyCode}</b>
+    `;
+});</code></pre>
+                <div class="test-container">
+                    <form class="form">
+                        <div class="row">
+                            <div class="col">
+                                <label for="keyTestEvent">Sprawdź:</label>
+                                <input type="text" id="keyTestEvent" value="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div id="keyTestEventShow">
+                            Klawisz: <b></b><br>
+                            Kod klawisza: <b></b>
+                            e.keyCode: <b></b><br>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div id="RGB"></div>
+                <p>Utwórz funkcję która będzie nasłuchiwać na zdarzenie keydown w powyższym divie. Jeśli użytkownik wciśnie klawisz R, zmień tło strony na czerwone, jeśli wciśnie klawisz G, zmień tło na zielone, a jeśli wciśnie klawisz B, zmień tło na niebieskie.</p>
                 <pre><code id="z4s">//Tutaj znajdzie się twój kod gdy dodasz go do pliku zadanie4.js</code></pre>
             </section>
             <section id="zadanie5">

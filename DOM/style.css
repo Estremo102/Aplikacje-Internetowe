@@ -173,5 +173,12 @@ button{
     background-color: #f1f1f1;
     width: 25px;
     height: 25px;
+}
 
+#RGB{
+    display: block;
+    margin: auto;
+    border: #1E1E1E 2px solid;
+    width: 200px;
+    height: 100px;
 }
