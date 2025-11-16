@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - zdarzenia</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="zadanie1.js" defer></script>
+    <script src="zadanie2.js" defer></script>
+    <script src="zadanie3.js" defer></script>
+    <script src="zadanie4.js" defer></script>
+    <script src="zadanie5.js" defer></script>
+    <script src="zadanie6.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>DOM - zdarzenia</h1>
+    </header>
+    <div class="navbox">
+        <nav>
+            <ul>
+                <li><a href="#zadanie1">Zadanie 1</a></li>
+                <li><a href="#zadanie2">Zadanie 2</a></li>
+                <li><a href="#zadanie3">Zadanie 3</a></li>
+                <li><a href="#zadanie4">Zadanie 4</a></li>
+                <li><a href="#zadanie5">Zadanie 5</a></li>
+                <li><a href="#zadanie6">Zadanie 6</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="content">
+        <aside>
+            <div>
+                Postaraj się wykonać zadania samodzielnie bez pomocy AI. Jeśli nad czymś utkniesz śmiało zadawaj pytania, a spróbuję Cię naprowadzić na rozwiązanie. <br><br>
+                Rozwiązania zadań umieść w plikach zadanie1.js, zadanie2.js, zadanie3.js, zadanie4.js, zadanie5.js oraz zadanie6.js, a następnie odśwież stronę by zobaczyć czy zadanie wykonano poprawnie. <br><br>
+                Poprawnie wykonane zadania spowodują zaznaczenie na zielono przycisku nawigacyjnego.
+            </div>
+        </aside>
+        <main>
+            <section id="zadanie1">
+                <h2>Zadanie 1</h2>
+                <p>Zdarzenia czyli różne rzeczy, które mogą się dziać w przeglądarce. Może je wywoływać użytkownik, ale i każdy element na stronie. Przykładowo klikając na przycisk na stronie, wywołujemy zdarzenie click. Wybierając za pomocą klawisza tab kolejny element w formularzu, wywołujemy zdarzenie focus. Opuszczając taki element, wywołujemy blur. Obrazek się wgrał? Wywołuje zdarzenie load. Formularz się wysyła? Wywoływane jest zdarzenie submit.</p>
+                <p>Aby zareagować na wykonanie zdarzenia, powinniśmy podpiąć dla danego elementu funkcję nasłuchującą, która zostanie odpalona w momencie wykonania danego zdarzenia. Służy do tego funkcja <b>element.addEventListener().</b></p>  
+                <pre><code>//możemy podpiąć klasyczną funkcję anonimową
+const btn = document.querySelector(".button");
+
+btn.addEventListener("click", function() {
+    console.log("Kliknąłem na element A");
+});
+
+//lub funkcję strzałkową
+const btn = document.querySelector(".button");
+btn.addEventListener("click", () => {
+    console.log("Kliknąłem na element B");
+});
+
+//lub podpiąć funkcję poprzez referencję do niej
+function showText() {
+    console.log("Kliknąłem na element C");
+}
+
+const btn = document.querySelector(".button");
+btn.addEventListener("click", showText);
+
+//Przy wielu elementach będziemy działać podobnie:
+
+const buttons = document.querySelectorAll("button");
+        
+for (let btn of buttons) {
+    btn.addEventListener("click", () => {
+        console.log("Klik");
+    })
+}</code></pre>
+                <div class="myBtn">Kliknij mnie</div>
+                <p>powyższy div ma klasę "byBtn". Podepnij mu wydarzenie w przypadku kliknięcia które wywoła funkcję zmieniającą treść przycisku z "Kliknij mnie" na "Kliknięto"</p>
+                <pre><code id="z1s">//Tutaj znajdzie się twój kod gdy dodasz go do pliku zadanie1.js</code></pre>
+            </section>
+            <section id="zadanie2">
+                <h2>Zadanie 2</h2>
+                <p>Do wyrejestrowania (odpięcia) danej funkcji służy metoda <b>element.removeEventListener()</b>, która przyjmuje 2 parametry: nazwę zdarzenia i funkcję, którą chcemy wyrejestrować. </p>
+                <button>Licznik Kliknięć: 0</button>
+                <p>Utwórz licznik kliknięć na powyższym przycisku. Po 5 kliknięciach licznik ma przestać działać (czyli zdarzenie click ma zostać odpięte)</p>
+                <pre><code id="z2s">//Tutaj znajdzie się twój kod gdy dodasz go do pliku zadanie2.js</code></pre>
+            </section>
+            <section id="zadanie3">
+                <h2>Zadanie 3</h2>
+                
+                <pre><code id="z3s">//Tutaj znajdzie się twój kod gdy dodasz go do pliku zadanie3.js</code></pre>
+            </section>
+            <section id="zadanie4">
+                <h2>Zadanie 4</h2>
+                
+                <pre><code id="z4s">//Tutaj znajdzie się twój kod gdy dodasz go do pliku zadanie4.js</code></pre>
+            </section>
+            <section id="zadanie5">
+                <h2>Zadanie 5</h2>
+                
+                <pre><code id="z5s">//Tutaj znajdzie się twój kod gdy dodasz go do pliku zadanie5.js</code></pre>
+            </section>
+            <section id="zadanie6">
+                <h2>Zadanie 6</h2>
+                <pre><code id="z6s">//Tutaj znajdzie się twój kod gdy dodasz go do pliku zadanie6.js</code></pre>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2025</p>
+    </footer>
+</body>
+</html>
