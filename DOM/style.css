@@ -157,3 +157,21 @@ button{
     cursor: pointer;
     border-radius: 8px;
 }
+
+.flex-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 250px;
+    height: 250px;
+    border: 2px solid black;
+    margin: auto;
+}
+
+.flex-container > div{
+    background-color: #f1f1f1;
+    width: 25px;
+    height: 25px;
+
+}

@@ -85,7 +85,137 @@ for (let btn of buttons) {
             </section>
             <section id="zadanie3">
                 <h2>Zadanie 3</h2>
-                
+                <p>Bardzo często będziemy chcieli odwołać się z wnętrza funkcji do danego elementu, do którego podpięliśmy funkcję. Możemy to zrobić na kilka sposobów: </p>
+                <pre><code>const btn = document.querySelector("button");
+
+//w przypadku klasycznej funkcji możemy użyć zmiennej lub this
+btn.addEventListener("click", function() {
+    console.log(this) //button
+    console.log(btn) //button
+
+    this.innerText = "klik";
+    btn.innerText = "klik";
+})
+
+//w przypadku funkcji strzałkowej this użyć nie możemy
+btn.addEventListener("click", () => {
+    console.log(this) //window
+    console.log(btn) //button
+
+    this.innerText = "klik"; //błąd
+    btn.innerText = "klik";
+});
+
+function klik() {
+    console.log(this);
+}
+
+const btn = document.querySelector("button");
+btn.addEventListener("click", klik);</code></pre>
+                <p>Jak widzisz this nie zawsze zadziała, ponieważ w przypadku funkcji strzałkowej będzie wskazywał na zupełnie inny obiekt (np. window).</p>
+                <div class="flex-container">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <p>powyżej jest siatka divów 10x10. Pobierz za pomocą querySelectorAll zawartość flex-container a następnie dodaj im dwie akcje: pojedyncze kliknięcie zmienia biały kwadrat na żółty, a pojedyncze kliknięcie na niebieski</p>
                 <pre><code id="z3s">//Tutaj znajdzie się twój kod gdy dodasz go do pliku zadanie3.js</code></pre>
             </section>
             <section id="zadanie4">

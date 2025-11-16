@@ -93,10 +93,28 @@ window.onload = function() {
         },
         // Zadanie 3
         () => {
+            let div1, div2;
+            let originalBg1, originalBg2;
             try {
-
+                const divs = document.querySelectorAll('.flex-container > div');
+                if (divs.length < 2) return false;
+                div1 = divs[0];
+                div2 = divs[1];
+                originalBg1 = div1.style.backgroundColor;
+                originalBg2 = div2.style.backgroundColor;
+                div1.style.backgroundColor = 'white';
+                div2.style.backgroundColor = 'white';
+                div1.click();
+                if (div1.style.backgroundColor !== 'yellow') return false;
+                div2.dispatchEvent(new MouseEvent('dblclick', { bubbles: true }));
+                if (div2.style.backgroundColor !== 'blue') return false;
                 return true;
-            } catch { return false; }
+            } catch { return false; } finally {
+                try {
+                    if (div1 && typeof originalBg1 !== 'undefined') div1.style.backgroundColor = originalBg1;
+                    if (div2 && typeof originalBg2 !== 'undefined') div2.style.backgroundColor = originalBg2;
+                } catch {}
+            }
         },
         // Zadanie 4
         () => {
