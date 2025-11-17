@@ -29,3 +29,6 @@ function Losuj(strikes){
     uczniowie[random].id = "wylosowanyUczen";
 }
 
+function WprowadzIloscPiorunow(){
+    Losuj(window.prompt("Podaj ilość piorunów"));
+}
