@@ -213,3 +213,14 @@ button{
     font-weight: bold;
     margin-top: 10px;
 }
+
+.movable{
+    width: 100px;
+    height: 100px;
+    background-color: #e74c3c;
+    position: absolute;
+    top: 5300px;
+    left: 1200px;
+    border: 2px solid black;
+    border-radius: 8px;
+}
