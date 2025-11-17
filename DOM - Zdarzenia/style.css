@@ -201,3 +201,15 @@ button{
     top: 350px;
     left: 1000px;
 }
+
+.click-coordinates{
+    width: 600px;
+    height: 600px;
+    background-color: #27ae60;
+    margin: auto;
+    border: 2px solid black;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+}

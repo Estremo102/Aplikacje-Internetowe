@@ -267,12 +267,13 @@ element.addEventListener("click", e => {
 target.addEventListener('click', (e) => {
     const dpk = document.createElement('div');
     dpk.classList.add('dpk');
-    dpk.style.top = `${e.pageY-25}px`;
-    dpk.style.left = `${e.pageX-25}px`;
+    dpk.style.top = `${e.offsetY-25}px`;
+    dpk.style.left = `${e.offsetX-25}px`;
     document.body.appendChild(dpk);
 }
 );</code></pre>
-                
+                <div class="click-coordinates"></div>
+                <p>Dodaj powyższemu divowi funkcjonalność, która będzie wyświetlać współrzędne w których kliknięto. tekst wyświet w formacie: <b>Kliknięto w punkcie: (x, y)</b> gdzie pod x i y podstaw offsetX i offsetY</p>
                 <pre><code id="z5s">//Tutaj znajdzie się twój kod gdy dodasz go do pliku zadanie5.js</code></pre>
             </section>
             <section id="zadanie6">
