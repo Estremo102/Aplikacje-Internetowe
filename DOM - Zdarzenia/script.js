@@ -145,9 +145,24 @@ window.onload = function() {
         },
         // Zadanie 5
         () => {
+            let clickDiv;
+            let originalText;
             try {
+                clickDiv = document.querySelector('.click-coordinates');
+                if (!clickDiv) return false;
+                originalText = clickDiv.textContent;
+                const offsetX = 50, offsetY = 60;
+                const ev = new MouseEvent('click', { bubbles: true, cancelable: true, offsetX: offsetX, offsetY: offsetY });
+                clickDiv.dispatchEvent(ev);
+                const text = clickDiv.textContent;
+                const expectedPattern = `Kliknięto w punkcie: (${offsetX}, ${offsetY})`;
+                if (!text.includes(expectedPattern)) return false;
                 return true;
-            } catch { return false; }
+            } catch { return false; } finally {
+                try {
+                    if (clickDiv && typeof originalText !== 'undefined') clickDiv.textContent = originalText;
+                } catch {}
+            }
         },
         // Zadanie 6
         () => {
