@@ -151,9 +151,7 @@ window.onload = function() {
                 clickDiv = document.querySelector('.click-coordinates');
                 if (!clickDiv) return false;
                 originalText = clickDiv.textContent;
-                // Ustaw tekst na pusty/początkowy
                 clickDiv.textContent = '';
-                // Utwórz rzeczywiste zdarzenie click na elemencie
                 const offsetX = 15, offsetY = 8;
                 const rect = clickDiv.getBoundingClientRect();
                 const ev = new PointerEvent('click', { 
@@ -164,7 +162,6 @@ window.onload = function() {
                     clientY: rect.top + offsetY
                 });
                 clickDiv.dispatchEvent(ev);
-                // Sprawdź czy handler ustawił tekst z współrzędnymi
                 const text = clickDiv.textContent;
                 const hasCoordinates = text.includes('punkcie') && text.includes('(') && text.includes(')');
                 clickDiv.textContent = originalText;
@@ -173,8 +170,22 @@ window.onload = function() {
         },
         // Zadanie 6
         () => {
+            let movable;
+            let originalPos;
             try {
-                return true;
+                movable = document.querySelector('.movable');
+                if (!movable) return false;
+                originalPos = { top: movable.style.top, left: movable.style.left };
+                const mousedownEv = new MouseEvent('mousedown', { bubbles: true, cancelable: true, buttons: 1 });
+                movable.dispatchEvent(mousedownEv);
+                const mousemoveEv = new MouseEvent('mousemove', { bubbles: true, cancelable: true, clientX: 100, clientY: 100 });
+                document.dispatchEvent(mousemoveEv);
+                const posChanged = movable.style.top !== originalPos.top || movable.style.left !== originalPos.left;
+                const mouseupEv = new MouseEvent('mouseup', { bubbles: true, cancelable: true });
+                document.dispatchEvent(mouseupEv);
+                movable.style.top = originalPos.top;
+                movable.style.left = originalPos.left;
+                return posChanged;
             } catch { return false; }
         }
     ];
