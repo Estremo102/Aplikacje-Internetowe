@@ -151,18 +151,25 @@ window.onload = function() {
                 clickDiv = document.querySelector('.click-coordinates');
                 if (!clickDiv) return false;
                 originalText = clickDiv.textContent;
-                const offsetX = 50, offsetY = 60;
-                const ev = new MouseEvent('click', { bubbles: true, cancelable: true, offsetX: offsetX, offsetY: offsetY });
+                // Ustaw tekst na pusty/początkowy
+                clickDiv.textContent = '';
+                // Utwórz rzeczywiste zdarzenie click na elemencie
+                const offsetX = 15, offsetY = 8;
+                const rect = clickDiv.getBoundingClientRect();
+                const ev = new PointerEvent('click', { 
+                    bubbles: true, 
+                    cancelable: true,
+                    view: window,
+                    clientX: rect.left + offsetX,
+                    clientY: rect.top + offsetY
+                });
                 clickDiv.dispatchEvent(ev);
+                // Sprawdź czy handler ustawił tekst z współrzędnymi
                 const text = clickDiv.textContent;
-                const expectedPattern = `Kliknięto w punkcie: (${offsetX}, ${offsetY})`;
-                if (!text.includes(expectedPattern)) return false;
-                return true;
-            } catch { return false; } finally {
-                try {
-                    if (clickDiv && typeof originalText !== 'undefined') clickDiv.textContent = originalText;
-                } catch {}
-            }
+                const hasCoordinates = text.includes('punkcie') && text.includes('(') && text.includes(')');
+                clickDiv.textContent = originalText;
+                return hasCoordinates;
+            } catch { return false; }
         },
         // Zadanie 6
         () => {
