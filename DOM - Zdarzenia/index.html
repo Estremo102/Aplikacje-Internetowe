@@ -256,11 +256,28 @@ input.addEventListener("keydown", e => {
             </section>
             <section id="zadanie5">
                 <h2>Zadanie 5</h2>
+                <p>Tak jak w poprzednim zadaniu, aby pobrać dodatkowe informacje o zaistniałym zdarzeniu, wystarczy, że wypiszemy w konsoli wartość przekazanego do naszej funkcji parametru:</p>
+                <pre><code>const element = document.querySelector(".element");
+element.addEventListener("click", e => {
+    console.log(e); //MouseEvent
+});</code></pre>
+                <p>Na poniższym divie wykrywane jest miejsce w którym kliknięto i tworzony w tym miejscu nowy div o klasie .dpk. za pomocą pageX i pageY modyfikowane są parametry top i left.</p>
+                <div class="shooting-target"></div>
+                <pre><code>const target = document.querySelector('.shooting-target');
+target.addEventListener('click', (e) => {
+    const dpk = document.createElement('div');
+    dpk.classList.add('dpk');
+    dpk.style.top = `${e.pageY-25}px`;
+    dpk.style.left = `${e.pageX-25}px`;
+    document.body.appendChild(dpk);
+}
+);</code></pre>
                 
                 <pre><code id="z5s">//Tutaj znajdzie się twój kod gdy dodasz go do pliku zadanie5.js</code></pre>
             </section>
             <section id="zadanie6">
                 <h2>Zadanie 6</h2>
+                <p></p>
                 <pre><code id="z6s">//Tutaj znajdzie się twój kod gdy dodasz go do pliku zadanie6.js</code></pre>
             </section>
         </main>

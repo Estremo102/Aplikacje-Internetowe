@@ -146,7 +146,6 @@ window.onload = function() {
         // Zadanie 5
         () => {
             try {
-
                 return true;
             } catch { return false; }
         },
