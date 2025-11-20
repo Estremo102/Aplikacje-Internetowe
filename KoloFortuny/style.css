@@ -4,7 +4,11 @@ body{
 }
 
 .header h1{
+    margin: auto;
     margin-top: 0px;
+    color: #DDD;
+    width: 500px;
+    text-align: center;
 }
 
 .header, .footer{
@@ -16,18 +20,17 @@ body{
 
 .content{
     display: flex;
+    flex-wrap: wrap;
 }
 
 .left-aside, .right-aside{
     background-color: #777;
-    width: 25%;
     margin: 0;
     padding: 0;
-    min-height: 80vh;
 }
 
-.right-aside{
-    width: 50%;
+.left-aside, .right-aside, .main{
+    width: 100%;
 }
 
 iframe{
@@ -40,7 +43,6 @@ iframe{
     background-color: #999;
     margin: 0;
     padding: 0;
-    width: 25%;
     min-height: 80vh;
 }
 
@@ -62,14 +64,50 @@ iframe{
 
 button{
     display: block;
-    width: 300px;
+    float: left;
+    width: 40%;
     height: 40px;
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 100;
+    font-size: 10px;
 }
 
 a{
     text-decoration: none;
+}
+
+
+@media only screen and (min-width: 600px) {
+    button{
+        font-size: 16px;
+    }
+} 
+@media only screen and (min-width: 768px) {
+
+} 
+@media only screen and (min-width: 992px) {
+    .left-aside{
+        width: 34%;
+    }
+    .main{
+        width: 66%;
+    }
+    .right-aside{
+        width: 100%;
+    }
+    button{
+        width: 90%;
+    }
+} 
+@media only screen and (min-width: 1200px) {
+    .left-aside, .main{
+        width: 25%;
+        min-height: 80vh;
+    }
+    .right-aside{
+        width: 50%;
+        min-height: 80vh;
+    }
 }
