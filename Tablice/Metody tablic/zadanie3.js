@@ -1,5 +1,6 @@
 //rozwiązanie zadania 3 umieść wewnątrz tej funkcji
 function zadanie3() {
+    
 }
 zadanie3();
 
