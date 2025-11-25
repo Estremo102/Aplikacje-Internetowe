@@ -39,16 +39,32 @@
                 <p>Wyświetlanie danych na stronie odbywa się za pomocą komendy <pre><code>echo "treść do wyświetlenia";</code></pre></p>
                 <p>Twoim zadaniem jest wyświetlenie na stronie tekstu "Hello world!" używając do tego języka PHP.</p>
                 <div class="solution-container">
-                    
+
                 </div>
             </section>
             <section id="zadanie2">
                 <h2>Zadanie 2</h2>
-                
+                <p>komentarze w php można tworzyć na kilka sposobów <pre><code>&lt?php
+    #Komentarz jednolinijkowy
+    //Komentarz jednolinijkowy
+    /*Komentarz
+    wielolinijkowy*/
+?&gt</code></pre></p>
+                <p>Twoim zadaniem jest dodanie lub usunięcie komentarzy w poniższym kodzie</p>
+                <div class="solution-container">
+                    <?php 
+                        echo "Zakomentuj linijkę kodu która wyświetla ten tekst. za pomocą komentarza jednolinijkowego.<br>";
+                        echo "Tą linijkę kodu również zakomentuj używając komentarza wielolinijkowego. Użyj jednak innego stylu komentarza niż w poprzednim przypadku.<br>";
+                        //Poniżej znajduje się zakomentowany kod w bloku wielolinijkowym, odkomentuj go
+                        /*
+                        $wynik = 3 * 7;
+                        echo $wynik . " = 3 • 7";
+                        */
+                    ?>
+                </div>
             </section>
             <section id="zadanie3">
                 <h2>Zadanie 3</h2>
-                
                 
             </section>
             <section id="zadanie4">

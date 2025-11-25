@@ -4,7 +4,10 @@ for (const block of code) {
         .replace(/"([^"]*)"/g, '<span class="orange">"$1"</span>')
         .replace("<?php", '<span class="blue">&lt?php</span>')
         .replace("?>", '<span class="blue">?&gt</span>')
-        .replace("echo", '<span class="yellow">echo</span>');
+        .replace("echo", '<span class="yellow">echo</span>')
+        .replace(/#.*$/gm, '<span class="green">$&</span>')
+        .replace(/\/\/.*$/gm, '<span class="green">$&</span>')
+        .replace(/\/\*[\s\S]*?\*\//gm, '<span class="green">$&</span>');
 }
 
 window.onload = function() {
@@ -19,8 +22,8 @@ window.onload = function() {
         // Zadanie 2
         () => {
             try {
-                return false;
-                return true;
+                let solution = document.querySelector('#zadanie2 .solution-container').innerText;
+                return solution.trim() === "21 = 3 • 7";
             } catch { return false; }
         },
         // Zadanie 3
