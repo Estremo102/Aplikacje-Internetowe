@@ -46,8 +46,8 @@ window.onload = function() {
         // Zadanie 5
         () => {
             try {
-                return false;
-                return true;
+                let solution = document.querySelector('#zadanie5 .solution-container').innerText;
+                return solution.includes("Zmienna x wewnątrz funkcji wynosi: 5") && solution.includes("Zmienna x na zewnątrz funkcji wynosi: 3");
             } catch { return false; }
         },
         // Zadanie 6

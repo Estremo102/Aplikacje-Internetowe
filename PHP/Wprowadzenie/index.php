@@ -132,7 +132,17 @@ $y = "Jan";</code></pre>
                     <li>zmienne globalne - są tworzone poza funkcjami i są dostępne w całym skrypcie. Aby uzyskać dostęp do zmiennej globalnej wewnątrz funkcji, należy użyć słowa kluczowego global.</li>
                     <li>zmienne statyczne - są tworzone wewnątrz funkcji i zachowują swoją wartość między wywołaniami funkcji. Aby zadeklarować zmienną statyczną, należy użyć słowa kluczowego static.</li>
                 </ul>
+                <p>Twoim zadaniem jest utowrzenie zmiennej globalnej $x i przypisanie jej wartości 3 oraz zmiennej $x lokalnej wewnątrz funkcji i przypisanie jej wartości 5</p>
+                <div class="solution-container">
+                    <?php
+                    function myTest() {
+                      echo "<p>Zmienna x wewnątrz funkcji wynosi: $x</p>";
+                    }
+                    myTest();
 
+                    echo "<p>Zmienna x na zewnątrz funkcji wynosi: $x</p>";
+                    ?>
+                </div>
             </section>
             <section id="zadanie6">
                 <h2>Zadanie 6</h2>
