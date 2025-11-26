@@ -35,6 +35,7 @@
         <main>
             <section id="zadanie1">
                 <h2>Zadanie 1</h2>
+                <h3>Witaj świecie!</h3>
                 <p>Początek każdego kursu programowania jest w zwyczaju zaczynać od Hello world!. Aby napisać kod php należy użyć znacznika <pre><code>&lt?php tu umieszczasz kod php ?&gt</code></pre></p>
                 <p>Wyświetlanie danych na stronie odbywa się za pomocą komendy <pre><code>echo "treść do wyświetlenia";</code></pre></p>
                 <p>Twoim zadaniem jest wyświetlenie na stronie tekstu "Hello world!" używając do tego języka PHP.</p>
@@ -44,6 +45,7 @@
             </section>
             <section id="zadanie2">
                 <h2>Zadanie 2</h2>
+                <h3>Komentarze w PHP</h3>
                 <p>komentarze w php można tworzyć na kilka sposobów <pre><code>&lt?php
     #Komentarz jednolinijkowy
     //Komentarz jednolinijkowy
@@ -66,6 +68,7 @@
             </section>
             <section id="zadanie3">
                 <h2>Zadanie 3</h2>
+                <h3>Zmienne w PHP</h3>
                 <p>W PHP zmienne zaczynają się od znaku $. W przeciwieństwie do innych języków programowania, PHP nie posiada polecenia deklarowania zmiennej. Jest ona tworzona w momencie pierwszego przypisania jej wartości. Operatorem przypisania jest znak =</p>
                 <pre><code>$x = 2;
 $y = "Jan";</code></pre>
@@ -82,6 +85,7 @@ $y = "Jan";</code></pre>
             </section>
             <section id="zadanie4">
                 <h2>Zadanie 4</h2>
+                <h3>Typy danych w PHP</h3>
                 <p>PHP obsługuje następujące typy danych:
                     <ul>
                         <li>String - ciąg znaków, np. "Hello world!"</li>
@@ -121,7 +125,14 @@ $y = "Jan";</code></pre>
             </section>
             <section id="zadanie5">
                 <h2>Zadanie 5</h2>
-                
+                <h3>Zasięg zmiennych PHP</h3>
+                <p>W PHP zmienne można deklarować w dowolnym miejscu skryptu. Zasięg zmiennej to część skryptu, w której można się do niej odwoływać/używać. W PHP istnieją trzy różne zasięgi zmiennych:</p>
+                <ul>
+                    <li>zmienne lokalne - są tworzone wewnątrz funkcji i są dostępne tylko w obrębie tej funkcji. Poza funkcją nie można się do nich odwoływać.</li>
+                    <li>zmienne globalne - są tworzone poza funkcjami i są dostępne w całym skrypcie. Aby uzyskać dostęp do zmiennej globalnej wewnątrz funkcji, należy użyć słowa kluczowego global.</li>
+                    <li>zmienne statyczne - są tworzone wewnątrz funkcji i zachowują swoją wartość między wywołaniami funkcji. Aby zadeklarować zmienną statyczną, należy użyć słowa kluczowego static.</li>
+                </ul>
+
             </section>
             <section id="zadanie6">
                 <h2>Zadanie 6</h2>
