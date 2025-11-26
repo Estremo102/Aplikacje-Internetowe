@@ -53,8 +53,8 @@ window.onload = function() {
         // Zadanie 6
         () => {
             try {
-                return false;
-                return true;
+                let solution = document.querySelector('#zadanie6 .solution-container').innerHTML;
+                return solution.trim() === "1<br>3<br>6<br>";
             } catch { return false; }
         }
     ];
