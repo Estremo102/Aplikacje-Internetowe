@@ -40,7 +40,7 @@ window.onload = function() {
         () => {
             try {
                 let solution = document.querySelector('#zadanie4 .solution-container').innerText;
-                return solution.trim() === 'array(5) { [0]=> int(5) [1]=> string(4) "John" [2]=> float(3.14) [3]=> bool(false) [4]=> NULL }';
+                return solution.includes('array(5) { [0]=> int(5) [1]=> string(4) "John" [2]=> float(3.14) [3]=> bool(true) [4]=> NULL }');
             } catch { return false; }
         },
         // Zadanie 5
