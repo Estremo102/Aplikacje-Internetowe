@@ -9,7 +9,8 @@ for (const block of code) {
         .replace(/\/\/.*$/gm, '<span class="green">$&</span>')
         .replace(/\/\*[\s\S]*?\*\//gm, '<span class="green">$&</span>')
         .replace(/\d+/g, '<span class="lightgreen">$&</span>')
-        .replace(/\$[a-zA-Z_][a-zA-Z0-9_]*/g, '<span class="lightblue">$&</span>');
+        .replace(/\$[a-zA-Z_][a-zA-Z0-9_]*/g, '<span class="lightblue">$&</span>')
+        .replace(/<br>/g, "&ltbr&gt");
 }
 
 window.onload = function() {
@@ -38,8 +39,8 @@ window.onload = function() {
         // Zadanie 4
         () => {
             try {
-                return false;
-                return true;
+                let solution = document.querySelector('#zadanie4 .solution-container').innerText;
+                return solution.trim() === 'array(5) { [0]=> int(5) [1]=> string(4) "John" [2]=> float(3.14) [3]=> bool(false) [4]=> NULL }';
             } catch { return false; }
         },
         // Zadanie 5
