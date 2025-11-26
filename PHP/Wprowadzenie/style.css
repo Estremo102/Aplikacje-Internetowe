@@ -68,7 +68,7 @@ pre{
 }
 
 .green{
-    color: #6A9955;  
+    color: #6A9955 !important;  
 }
 
 .pink{
@@ -80,11 +80,11 @@ pre{
 }
 
 .blue{
-    color: #4FC1FF; 
+    color: #569CD6; 
 }
 
 .lightblue{
-    color: #569CD6; 
+    color: #4FC1FF; 
 }
 
 .darkblue{
@@ -93,6 +93,10 @@ pre{
 
 .orange{
     color: #CE9178; 
+}
+
+.lightgreen{
+    color: #B5CEA8; 
 }
 
 .navbox{

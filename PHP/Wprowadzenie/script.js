@@ -7,7 +7,9 @@ for (const block of code) {
         .replace("echo", '<span class="yellow">echo</span>')
         .replace(/#.*$/gm, '<span class="green">$&</span>')
         .replace(/\/\/.*$/gm, '<span class="green">$&</span>')
-        .replace(/\/\*[\s\S]*?\*\//gm, '<span class="green">$&</span>');
+        .replace(/\/\*[\s\S]*?\*\//gm, '<span class="green">$&</span>')
+        .replace(/\d+/g, '<span class="lightgreen">$&</span>')
+        .replace(/\$[a-zA-Z_][a-zA-Z0-9_]*/g, '<span class="lightblue">$&</span>');
 }
 
 window.onload = function() {
@@ -29,8 +31,8 @@ window.onload = function() {
         // Zadanie 3
         () => {
             try {
-                return false;
-                return true;
+                let solution = document.querySelector('#zadanie3 .solution-container').innerText;
+                return solution.includes("20 2");
             } catch { return false; }
         },
         // Zadanie 4
