@@ -36,7 +36,6 @@ footer{
 }
 
 footer a{
-    text-decoration: none;
     float: left;
     display: block;
     width: fit-content;
@@ -67,7 +66,7 @@ aside{
     width: 25%;
     margin: 0;
     padding: 0;
-    min-height: calc(100vh-180px);
+    min-height: calc(100vh - 180px);
 }
 
 main{
@@ -75,7 +74,7 @@ main{
     margin: 0;
     padding: 0;
     width: 75%;
-    min-height: calc(100vh-180px);
+    min-height: calc(100vh - 180px);
 }
 
 a{
