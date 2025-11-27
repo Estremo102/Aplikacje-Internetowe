@@ -6,8 +6,13 @@ body{
 header h1{
     margin: auto;
     width: fit-content;
-    color: white;
+    color: #edeeff;
     padding: 25px;
+}
+
+header img{
+    height: 90px;
+    float: left;
 }
 
 section{
@@ -15,11 +20,11 @@ section{
     padding: 10px;
     border: 2px solid black;
     border-radius: 8px;
-    background-color: #ccc;
+    background-color: #9498cf;
 }
 
 header, footer{
-    background-color: #555;
+    background-color: #777bb3;
     margin: 0;
     padding: 0;
     height: 90px;
@@ -38,7 +43,7 @@ footer > p {
 }
 
 aside{
-    background-color: #777;
+    background-color: #9ca1e7;
     width: 25%;
     margin: 0;
     padding: 0;
@@ -46,7 +51,7 @@ aside{
 }
 
 main{
-    background-color: #999;
+    background-color: #d2d5ff;
     margin: 0;
     padding: 0;
     width: 75%;
@@ -101,7 +106,7 @@ pre{
 
 .navbox{
     margin: 0;
-    background-color: #333;
+    background-color: #363a75;
     position: sticky;
     top: 0;
     height: 40px;
@@ -115,7 +120,7 @@ aside div{
     font-size: 20px;
     padding: 1.5%;
     text-align: center;
-    background-color: #807777;
+    background-color: #8888;
 }
 
 nav ul{
@@ -128,7 +133,6 @@ nav ul{
 nav ul li{
     margin: auto;
     padding: 10px;
-    background-color: #333;
 }
 
 nav ul li a{
@@ -138,21 +142,6 @@ nav ul li a{
 
 .done{
     background-color: #27ae60 !important;
-}
-
-.myBtn{
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 12px;
-    margin: auto;
 }
 
 button{

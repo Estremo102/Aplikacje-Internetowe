@@ -1,8 +1,4 @@
 <?php include $_SERVER['DOCUMENT_ROOT'].'/php/head.php'; ?>
-<body>
-    <header>
-        <h1>PHP wprowadzenie</h1>
-    </header>
     <div class="navbox">
         <nav>
             <ul>
