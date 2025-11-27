@@ -21,6 +21,7 @@ section{
     border: 2px solid #020641;
     border-radius: 8px;
     background-color: #9498cf;
+    color: #000220;
 }
 
 header, footer{
@@ -48,7 +49,7 @@ footer a img{
 }
 
 footer p {
-    color: white;
+    color: #edeeff;
     text-align: center;
     margin: 0;
     padding: 30px;
@@ -79,6 +80,25 @@ main{
 
 a{
     text-decoration: none;
+}
+
+aside ul li {
+    list-style-type: none;
+    background-color: #777bb3;
+    display: block;
+    width: 80%;
+    margin: auto;
+    margin: 0px;
+    padding: 10px;
+    border: #02074d 2px solid;
+    border-radius: 5px;
+    color: #EDEEFF;
+    text-align: center;
+    font-weight: 900;
+}
+
+aside ul li:hover{
+    background-color: #FFF2;
 }
 
 pre{
@@ -155,7 +175,7 @@ nav ul li{
 }
 
 nav ul li a{
-    color: white;
+    color: #edeeff;
     font-weight: bold;
 }
 
