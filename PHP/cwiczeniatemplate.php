@@ -9,23 +9,7 @@
     <main>
         <section>
             <h2>Zadanie 1</h2>
-            <h3>Rodzaje typów danych</h3>
-            <p>PHP obsługuje następujące typy danych:
-                <ul>
-                    <li>String - ciąg znaków, np. "Hello world!"</li>
-                    <li>Integer - liczba całkowita, np. 42</li>
-                    <li>Float - liczba zmiennoprzecinkowa, np. 3.14</li>
-                    <li>Boolean - wartość logiczna, true lub false</li>
-                    <li>Array - tablica, np. ["Jabłko", "Banan", "Gruszka"]</li>
-                    <li>Object - obiekt, np. instancja klasy</li>
-                    <li>NULL - specjalna wartość oznaczająca brak wartości</li>
-                    <li>Resource - specjalna zmienna, zawierająca referencję do zasobu zewnętrznego. </li>
-                </ul>
-            </p>
-            <p>Twoim zadaniem jest utworzenie zmiennych o nazwach string, integer, float, boolean i array oraz przypisanie im danych odpowiedniego typu</p>
             <div class="solution-container">
-                <!-- Tutaj umieść rozwiązanie -->
-                <?php include 'zadanie1_test.php'; ?>
             </div>
         </section>
         
