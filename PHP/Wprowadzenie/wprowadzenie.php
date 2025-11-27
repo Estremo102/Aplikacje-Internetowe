@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP - wprowadzenie
-    </title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-</head>
+<?php include $_SERVER['DOCUMENT_ROOT'].'/php/head.php'; ?>
 <body>
     <header>
         <h1>PHP wprowadzenie</h1>
@@ -195,8 +186,4 @@ Wynik powyższego kodu to:
             </section>
         </main>
     </div>
-    <footer>
-        <p>&copy; 2025</p>
-    </footer>
-</body>
-</html>
+<?php include $_SERVER['DOCUMENT_ROOT'].'/php/foot.php'; ?>
