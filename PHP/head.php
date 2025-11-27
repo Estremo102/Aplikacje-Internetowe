@@ -7,6 +7,7 @@
         <?php 
             $title = ucfirst(explode('.', basename($_SERVER['PHP_SELF']))[0]);
             $title = $title == 'Index' ? 'Strona Główna' : $title;
+            $title = str_replace("_", " ", $title);
             echo $title;
             ?>
     </title>
@@ -16,5 +17,5 @@
 </head>
 <body>
     <header>
-        <img src="/php/images/PHP-logo.svg"> <h1> <?php echo "Kurs PHP - $title"; ?> </h1>
+        <a href="/php/index.php"><img src="/php/images/PHP-logo.svg"></a> <h1> <?php echo "Kurs PHP - $title"; ?> </h1>
     </header>

@@ -3,6 +3,7 @@
     <aside>
         <ul>
             <a href="/php/wprowadzenie/wprowadzenie.php"><li>Wprowadzenie</li></a>
+            <a href="/php/typy_danych/typy_danych.php"><li>Typy danych</li></a>
         </ul>
     </aside>
     <main>
