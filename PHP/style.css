@@ -18,7 +18,7 @@ header img{
 section{
     margin: 10px;
     padding: 10px;
-    border: 2px solid black;
+    border: 2px solid #020641;
     border-radius: 8px;
     background-color: #9498cf;
 }
@@ -30,12 +30,32 @@ header, footer{
     height: 90px;
 }
 
-footer > p {
+footer{
+    display: flex;
+    justify-content: center;
+}
+
+footer a{
+    text-decoration: none;
+    float: left;
+    display: block;
+    width: fit-content;
+}
+
+footer a img{
+    height: 40px;
+    margin: auto;
+    padding: 20px;
+}
+
+footer p {
     color: white;
     text-align: center;
     margin: 0;
     padding: 30px;
     font-size: 25px;
+    display: block;
+    width: fit-content;
 }
 
 .content{
@@ -170,56 +190,6 @@ button{
     background-color: #f1f1f1;
     width: 25px;
     height: 25px;
-}
-
-#RGB{
-    display: block;
-    margin: auto;
-    border: #1E1E1E 2px solid;
-    width: 200px;
-    height: 100px;
-}
-
-.shooting-target{
-    width: 1000px;
-    height: 1000px;
-    border: 2px solid black;
-    margin: auto;
-    background-image: url(tarcza.jpg);
-}
-
-.dpk{
-    width: 50px;
-    height: 50px;
-    background-image: url(dpk.png);
-    background-size: cover;
-    position: absolute;
-    z-index: 10;
-    top: 350px;
-    left: 1000px;
-}
-
-.click-coordinates{
-    width: 600px;
-    height: 600px;
-    background-color: #27ae60;
-    margin: auto;
-    border: 2px solid black;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.movable{
-    width: 100px;
-    height: 100px;
-    background-color: #e74c3c;
-    position: absolute;
-    top: 5300px;
-    left: 1200px;
-    border: 2px solid black;
-    border-radius: 8px;
 }
 
 .solution-container{
