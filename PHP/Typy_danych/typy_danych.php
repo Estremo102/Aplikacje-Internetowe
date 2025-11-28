@@ -60,6 +60,7 @@ echo "Produkt kosztuje $cena złotych";</code></pre>
                 Wyniki zapisz kolejno w zmiennych: len, words, pos. Wypisz zmienne oddzielone spacjami
             </p>
             <div class="solution-container">
+                <!-- Tutaj umieść rozwiązanie -->
             <?php include 'testy/zadanie2_test.php'; ?>
             </div>
         </section>
@@ -74,14 +75,15 @@ echo "Produkt kosztuje $cena złotych";</code></pre>
                     <li>Funkcja strtolower('TEKST') zwraca ciąg znaków zapisany małymi literami.</li>
                     <li>Funkcja str_replace('stary tekst', 'nowy tekst', 'tekst do zmiany') zastępuje niektóre znaki w ciągu znaków innymi znakami.</li>
                     <li>Funkcja strrev('kajak') odwraca ciąg znaków.</li>
-                    <li>Funkcja PHP trim(' tekst ') usuwa wszelkie odstępy na początku lub na końcu tekstu. <br> (Spacja to odstęp przed i/lub po tekście, który bardzo często chcemy usunąć.)</li>
-                    <li>Funkcja PHP explode('separator', 'tekst') dzieli ciąg znaków na tablicę.</li>
+                    <li>Funkcja trim(' tekst ') usuwa wszelkie odstępy na początku lub na końcu tekstu. <br> (Spacja to odstęp przed i/lub po tekście, który bardzo często chcemy usunąć.)</li>
+                    <li>Funkcja explode('separator', 'tekst') dzieli ciąg znaków na tablicę.</li>
                 </ul>
             </p>
             <p>Dana jest zmienna input. Znajdują sięw niej palindromy oddzielone średnikami. Twoim zadaniem jest zmodyfikowanie jej tak by była napisana z samych wielkich liter, bez spacji na końcu i początku tekstu, a następnie utwórz zmienną palindromy w której znajdzie się tablica z osobnymi palindromami.</p>
             <div class="solution-container">
                 <?php 
                     $input = ' KaMiLśLiMaK;kajak;a kanapa pana kota;Kobyła ma mały bok;Może jutro ta dama sama da tortu jeżom;Akta generała ma mała renegatka;Łapał za kran, a kanarka złapał ';
+                    //Tutaj umieść rozwiązanie
                 ?>
             <?php include 'testy/zadanie3_test.php'; ?>
             </div>
@@ -122,6 +124,7 @@ echo "Produkt kosztuje $cena złotych";</code></pre>
                 <?php 
                 $imie = 'Mariusz';
                 $nazwisko = 'Gwóźdź';
+                //Tutaj umieść rozwiązanie
                 ?>
             <?php include 'testy/zadanie4_test.php'; ?>
             </div>
@@ -129,7 +132,30 @@ echo "Produkt kosztuje $cena złotych";</code></pre>
         
         <section id="zadanie5">
             <h2>Zadanie 5</h2>
+            <h3>Znak ucieczki</h3>
+            <p>Aby wstawić znaki niedozwolone w ciągu znaków, użyj znaku ucieczki. Znak ucieczki to ukośnik odwrotny \, po którym następuje znak, który chcesz wstawić. Przykładem niedozwolonego znaku jest cudzysłów w ciągu znaków, który jest ujęty w cudzysłów. Znak ucieczki działa tylko w podwójnym cudzysłowie ""</p>
+            <p>
+                <ul>
+                    <li>\' Pojedynczy cudzysłów</li>
+                    <li>\" Podwójny cudzysłów</li>
+                    <li>\$ Zmienne PHP</li>
+                    <li>\n Nowy wiersz</li>
+                    <li>\r Powrót karetki</li>
+                    <li>\t Tabulator</li>
+                    <li>\f Przesunięcie strony</li>
+                    <li>\ooo Wartość ósemkowa</li>
+                    <li>\xhh Wartość szesnastkowa</li>
+                </ul>
+            </p>
+            <p>Innym sposobem na wstawienie cudzysłowia jest wstawienie pojedynczego wewnątrz podwójnego i odwrotnie.</p>
+            <p>
+                Twoim zadaniem jest utworzenie zmiennych pi = 3.14 i miasto = Zakopane, a następnie wyświetlenie tekstu: <br>
+                Zmienna $pi wynosi 3.14, zmienna $miasto ma przypisaną wartość "Zakopane". 
+                Użyj znaku podwójnego cudzysłowia, interpolacji i znaku ucieczki.
+            </p>
             <div class="solution-container">
+                <!-- Tutaj umieść rozwiązanie  -->
+                <?php include 'testy/zadanie5_test.php'; ?>
             </div>
         </section>
         
