@@ -7,37 +7,37 @@
         </ul>
     </aside>
     <main>
-        <section>
+        <section id="#zadanie1">
             <h2>Zadanie 1</h2>
             <div class="solution-container">
             </div>
         </section>
         
-        <section>
+        <section id="#zadanie2">
             <h2>Zadanie 2</h2>
             <div class="solution-container">
             </div>
         </section>
         
-        <section>
+        <section id="#zadanie3">
             <h2>Zadanie 3</h2>
             <div class="solution-container">
             </div>
         </section>
         
-        <section>
+        <section id="#zadanie4">
             <h2>Zadanie 4</h2>
             <div class="solution-container">
             </div>
         </section>
         
-        <section>
+        <section id="#zadanie5">
             <h2>Zadanie 5</h2>
             <div class="solution-container">
             </div>
         </section>
         
-        <section>
+        <section id="#zadanie6">
             <h2>Zadanie 6</h2>
             <div class="solution-container">
             </div>
