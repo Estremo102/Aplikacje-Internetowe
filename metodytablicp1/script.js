@@ -58,8 +58,28 @@ window.onload = function() {
         () => {
             try {
                 if(typeof myPush === 'function'){
+                    let test = [1, 2];
+                    myPush(test, 3);
+                    if (test.length != 3 ||
+                        test[0] != 1 ||
+                        test[1] != 2 ||
+                        test[2] != 3 ) {
+                        return false;
+                    } 
+                    if(myPush(test, 4, 5) != 5){
+                        return false;
+                    }
+                    if(test.length!=5 ||
+                        test[0] != 1 ||
+                        test[1] != 2 ||
+                        test[2] != 3 ||
+                        test[3] != 4 ||
+                        test [4] != 5
+                    ) {
+                        return false;
+                    }
                     return true;
-                }else{
+                } else {
                     return false;
                 }
             } catch { return false; }
