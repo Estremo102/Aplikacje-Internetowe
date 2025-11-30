@@ -100,6 +100,43 @@ window.onload = function() {
         () => {
             try {
                 if(typeof myShift === 'function' && typeof myUnshift === 'function'){
+                    let test = [3, 4, 5];
+                    if(myUnshift(test, 2) != 4){
+                        return false;
+                    }
+                    if (
+                        test[0] != 2 || 
+                        test[1] != 3 ||
+                        test[2] != 4 ||
+                        test[3] != 5
+                    ){
+                        return false;
+                    }
+                    if(myUnshift(test, 0, 1) != 6){
+                        return false;
+                    }
+                    if (
+                        test[0] != 0 || 
+                        test[1] != 1 ||
+                        test[2] != 2 ||
+                        test[3] != 3 ||
+                        test[4] != 4 ||
+                        test[5] != 5
+                    ){
+                        return false;
+                    }
+                    if(myShift(test) != 0 || test.length != 5){
+                        return false;
+                    }
+                    if (
+                        test[0] != 1 || 
+                        test[1] != 2 ||
+                        test[2] != 3 ||
+                        test[3] != 4 ||
+                        test[4] != 5
+                    ){
+                        return false;
+                    }
                     return true;
                 }else{
                     return false;
