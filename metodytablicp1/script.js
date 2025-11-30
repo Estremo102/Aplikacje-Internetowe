@@ -147,7 +147,8 @@ window.onload = function() {
         () => {
             try {
                 if(typeof myJoin === 'function'){
-                    return true;
+                    let test = [1, 2, 3];
+                    return myJoin(test) == '1,2,3' && myJoin(test, '-') == '1-2-3';
                 }else{
                     return false;
                 }
@@ -157,7 +158,9 @@ window.onload = function() {
         () => {
             try {
                 if(typeof mySplit === 'function'){
-                    return true;
+                    let test = mySplit('1,2,3,4', ',');
+                    if (!Array.isArray(test)) return false;
+                    return test[0] == 1 && test[1] == 2 && test[2] == 3 && test[3] == 4;
                 }else{
                     return false;
                 }
