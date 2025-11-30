@@ -170,6 +170,25 @@ window.onload = function() {
         () => {
             try {
                 if(typeof myReverse === 'function'){
+                    let test = [1, 2, 3, 4];
+                    myReverse(test);
+                    if (test.length != 4 ||
+                        test[0] != 4 ||
+                        test[1] != 3 ||
+                        test[2] != 2 ||
+                        test[3] != 1 ){
+                        return false
+                    }
+                    test[4] = 0;
+                    myReverse(test);
+                    if (test.length != 5 ||
+                        test[0] != 0 ||
+                        test[1] != 1 ||
+                        test[2] != 2 ||
+                        test[3] != 3 ||
+                        test[4] != 4 ){
+                        return false;
+                    }
                     return true;
                 }else{
                     return false;
