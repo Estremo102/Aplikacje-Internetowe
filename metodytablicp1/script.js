@@ -69,7 +69,7 @@ window.onload = function() {
                     if(myPush(test, 4, 5) != 5){
                         return false;
                     }
-                    if(test.length!=5 ||
+                    if(test.length !=5 ||
                         test[0] != 1 ||
                         test[1] != 2 ||
                         test[2] != 3 ||
@@ -88,7 +88,9 @@ window.onload = function() {
         () => {
             try {
                 if(typeof myPop === 'function'){
-                    return true;
+                    let test = [1, 2, 3, 4, 5];
+                    let p = myPop(test);
+                    return p == 5 && test.length == 4;
                 }else{
                     return false;
                 }
