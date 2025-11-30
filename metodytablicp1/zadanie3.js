@@ -1,8 +1,9 @@
 //rozwiązanie zadania 3 umieść wewnątrz tej funkcji
-
+function zadanie3() {
+}
+zadanie3();
 
 // Kod do testów, nie usuwać
 try{
-    window.myShift = myShift;
-    window.myUnshift = myUnshift;
+    window.zadanie3 = zadanie3;
 }catch{}
