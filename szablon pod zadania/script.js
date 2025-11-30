@@ -57,7 +57,6 @@ window.onload = function() {
         // Zadanie 1
         () => {
             try {
-                
                 return true;
             } catch { return false; }
         },
@@ -69,7 +68,6 @@ window.onload = function() {
         },
         // Zadanie 3
         () => {
-            l
             try {
                 return true;
             } catch { return false; }
