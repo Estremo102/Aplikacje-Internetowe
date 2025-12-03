@@ -35,6 +35,9 @@
     }
     if($correct)
     {
+        $progress++;
         echo "Zadanie wykonane poprawnie" . "<Script>this.document.querySelectorAll('nav ul li')[5].classList.add('done');</Script>";        
     }
+
+    echo "<Script>this.document.querySelector('.navbox nav progress').value = \"$progress\";</script>";
 ?>

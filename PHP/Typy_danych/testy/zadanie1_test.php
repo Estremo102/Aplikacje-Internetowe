@@ -1,5 +1,6 @@
 <?php 
     $correct = true;
+    $progress = 0;
     if(!isset($string, $integer, $float, $boolean, $array))
     {
         echo "Nie wszystkie zmienne zostały zadeklarowane.";
@@ -35,6 +36,7 @@
     }
     if($correct)
     {
+        $progress++;
         echo "Zadanie wykonane poprawnie" . "<Script>this.document.querySelectorAll('nav ul li')[0].classList.add('done');</Script>";        
     }
 ?>

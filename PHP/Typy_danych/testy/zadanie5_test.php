@@ -20,6 +20,7 @@
     }
     if($correct)
     {
+        $progress++;
         echo "<Script>
             if(document.querySelector('#zadanie5 .solution-container').innerText.includes('Zmienna \$pi wynosi 3.14, zmienna \$miasto ma przypisaną wartość \"Zakopane\".'))
             {

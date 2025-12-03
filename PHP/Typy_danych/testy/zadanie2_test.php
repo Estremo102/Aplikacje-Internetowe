@@ -25,6 +25,7 @@
     }
     if($correct)
     {
+        $progress++;
         echo "<Script>
             if(document.querySelector('#zadanie2 .solution-container').innerText.includes('168 29 72'))
             {

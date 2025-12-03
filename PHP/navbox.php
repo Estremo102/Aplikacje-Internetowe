@@ -8,5 +8,6 @@
                 <li><a href="#zadanie5">Zadanie 5</a></li>
                 <li><a href="#zadanie6">Zadanie 6</a></li>
             </ul>
+            <progress value="0" max="6"></progress>
         </nav>
     </div>

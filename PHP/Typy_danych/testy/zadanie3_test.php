@@ -29,6 +29,7 @@
     }
 
     if ($correct) {
+        $progress++;
         echo 'Zadanie wykonane poprawnie' . "<Script>this.document.querySelectorAll('nav ul li')[2].classList.add('done');</Script>";
     }
 ?>
