@@ -1,34 +1,50 @@
-<?php 
+<?php
     $correct = true;
-    if(!isset($pi, $miasto))
-    {
-        echo "Nie wszystkie zmienne zostały zadeklarowane.";
+    $dbname = null;
+    
+    if(!isset($dbname)) {
         $correct = false;
-    }
-    else
-    {
-        if($pi != 3.14)
-        {
-            $correct = false;
-            echo '<br>Zmienna $pi ma niepoprawną wartość.';
-        }
-        if($miasto != 'Zakopane')
-        {
-            $correct = false;
-            echo '<br>Zmienna $miasto ma niepoprawną wartość';
-        }
-    }
-    if($correct)
-    {
-        $progress++;
-        echo "<Script>
-            if(document.querySelector('#zadanie5 .solution-container').innerText.includes('Zmienna \$pi wynosi 3.14, zmienna \$miasto ma przypisaną wartość \"Zakopane\".'))
-            {
-                this.document.querySelectorAll('nav ul li')[4].classList.add('done');
-                document.write('<br>Zadanie wykonane poprawnie');
-            }else{
-                document.write('<br>Dane nie zostały wyświetlone poprawnie');
+        echo 'Najpierw wykonaj zadanie 4 (baza danych musi być utworzona)';
+    } else {
+        include __DIR__.'/../zadanie5.php';
+        
+        $servername = "localhost"; 
+        $username = "root"; 
+        $password = ""; 
+
+        try {
+            $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            
+            $sql = "SHOW TABLES LIKE 'User'";
+            $result = $conn->query($sql);
+            $tableExists = $result->rowCount() > 0;
+            
+            if(!$tableExists) {
+                $correct = false;
+                echo 'Tabela User nie została utworzona';
+            } else {
+                $sql = "DESCRIBE User";
+                $result = $conn->query($sql);
+                $columns = $result->fetchAll(PDO::FETCH_COLUMN, 0);
+                
+                if(!in_array('ID', $columns) || !in_array('login', $columns) || !in_array('age', $columns)) {
+                    $correct = false;
+                    echo 'Tabela User nie ma wymaganych kolumn (ID, login, age)';
+                } else {
+                    echo 'Tabela User została utworzona poprawnie';
+                }
             }
-        </Script>";        
+            
+            $conn = null;
+        } catch(PDOException $e) {
+            $correct = false;
+            echo "Błąd połączenia: " . $e->getMessage();
+        }
+    }
+
+    if($correct) {
+        $progress++;
+        echo "<Script>this.document.querySelectorAll('nav ul li')[4].classList.add('done');</Script>";
     }
 ?>
