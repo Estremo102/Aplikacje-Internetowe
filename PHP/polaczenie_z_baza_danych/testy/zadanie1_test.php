@@ -12,6 +12,7 @@ try {
   echo "Nawiązano połączenie z bazą danych";
   $result = get_current_user();
   $progress++;
+  echo "<Script>this.document.querySelectorAll('nav ul li')[0].classList.add('done');</Script>";      
 } catch(PDOException $e) {
   echo "Nie udało się nawiązać połączenia: " . $e->getMessage();
   $result = $e->getMessage();

@@ -21,22 +21,23 @@
             <h2>Zadanie 2</h2>
             <h3>PDO</h3>
             <p>PDO w PHP to skrót od PHP Data Objects - rozszerzenie wbudowane w PHP, które zapewnia abstrakcyjny interfejs do obsługi różnych baz danych z jednego kodu źródłowego.</p>
-            <pre><code class="language-php"> &lt;?php
-$servername = "localhost";
-$username = "username";
-$password = "password";
+            <pre><code class="language-php">&lt;?php
+$servername = "localhost"; // Nazwa serwera, na potrzeby zajęć nie potrzeba zmieniać.
+$username = "username"; // Nazwa użytkownika, domyślny użytkownik w xamppie to root.
+$password = "password"; // Hasło, domyślne w xamppie jest puste.
+$dbname = "myDB"; // Nazwa bazy danych z którą chcemy się połączyć.
 
 try {
-  $conn = new PDO("mysql:host=$servername;dbname=myDB", $username, $password);
-  // set the PDO error mode to exception
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  echo "Connected successfully";
+    // Tworzymy nowe połączenie z bazą danych
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    // Ustawiamy by w przypadku błędu został wyrzucony wyjątek
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Udało się nawiązać połączenie";
 } catch(PDOException $e) {
-  echo "Connection failed: " . $e->getMessage();
+    echo "Błąd połączenia: " . $e->getMessage();
 }
-?&gt;
-            </code></pre>
-
+?&gt;</code></pre>
+            <p>Twoim zadaniem jest w pliku zadanie2.php stworzyć nowe połączenie z bazą danych. Skorzystaj z powyższego kodu, modyfikując odpowiednie fragmenty.</p>
             <div class="solution-container">
             <?php include 'testy/zadanie2_test.php'; ?>
             </div>
