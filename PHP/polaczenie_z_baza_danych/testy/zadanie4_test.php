@@ -1,19 +1,20 @@
 <?php
-    $correct = true;
-
-    if (!isset($wynik)) {
-        echo 'Nie utworzono zmiennej wynik';
-        $correct = false;
+    $dbname = null;
+    include __DIR__.'/../zadanie4.php';
+    if(!isset($dbname)) {
+        echo 'zmienna $dbname nie istnieje';
     } else {
-        if($wynik != 'Ma-źd')
-        {
-            echo 'Niepoprawny wynik';
-            $correct = false;
-        }
-    }
+        $servername = "localhost"; 
+        $username = "root"; 
+        $password = ""; 
 
-    if ($correct) {
-        $progress++;
-        echo 'Zadanie wykonane poprawnie' . "<Script>this.document.querySelectorAll('nav ul li')[3].classList.add('done');</Script>";
+        try {
+            $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            echo "Poprawnie utworzono bazę danych $dbname" . "<Script>this.document.querySelectorAll('nav ul li')[3].classList.add('done');</Script>";
+            $progress++;
+        } catch(PDOException $e) {
+            echo "Błąd połączenia: " . $e->getMessage();
+        }
     }
 ?>
