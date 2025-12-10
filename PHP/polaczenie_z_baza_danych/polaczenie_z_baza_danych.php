@@ -9,8 +9,9 @@
     <main>
         <section id="zadanie1">
             <h2>Zadanie 1</h2>
-            <h3>Rodzaje typów danych</h3>
-            
+            <h3>PHP + MySQL</h3>
+            <p>Za pomocą języka PHP możesz wysyłać do bazy danych zapytania w języku SQL. Aby połączyć się z bazą danych potrzebujesz w pakiecie xampp uruchomić usługę MySQL</p>
+            <p>Twoim zadaniem jest uruchomienie pakietów potrzebnych do nawiązania połączenia z bazą danych</p>
             <div class="solution-container">
                 <?php include 'testy/zadanie1_test.php'; ?>
             </div>
