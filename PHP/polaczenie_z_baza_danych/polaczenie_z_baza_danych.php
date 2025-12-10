@@ -45,10 +45,10 @@ try {
         
         <section id="zadanie3">
             <h2>Zadanie 3</h2>
-            <h3>Edycja ciągów znaków</h3>
-            
+            <h3>Zamykanie połączenia</h3>
+            <p>Aby zakończyć połaczenie z bazą danych wystarczy do odpowiedniej zmiennej przypisać wartość null</p>
+            <p>Twoim zadaniem jest zamknięcie połączenia z bazą danych istniejącego w zmiennej $conn. Rozwiązanie umieść w zadanie3.php</p>
             <div class="solution-container">
-
             <?php include 'testy/zadanie3_test.php'; ?>
             </div>
         </section>
