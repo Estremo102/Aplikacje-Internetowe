@@ -19,8 +19,24 @@
         
         <section id="zadanie2">
             <h2>Zadanie 2</h2>
-            <h3>Ciągi znaków</h3>
-            
+            <h3>PDO</h3>
+            <p>PDO w PHP to skrót od PHP Data Objects - rozszerzenie wbudowane w PHP, które zapewnia abstrakcyjny interfejs do obsługi różnych baz danych z jednego kodu źródłowego.</p>
+            <pre><code class="language-php"> &lt;?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+
+try {
+  $conn = new PDO("mysql:host=$servername;dbname=myDB", $username, $password);
+  // set the PDO error mode to exception
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  echo "Connected successfully";
+} catch(PDOException $e) {
+  echo "Connection failed: " . $e->getMessage();
+}
+?&gt;
+            </code></pre>
+
             <div class="solution-container">
             <?php include 'testy/zadanie2_test.php'; ?>
             </div>

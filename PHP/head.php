@@ -13,7 +13,9 @@
             ?>
     </title>
     <link rel="stylesheet" href="/php/style.css">
+    <link rel="stylesheet" href="/php/prism.css">
     <script src="script.js" defer></script>
+    <script src="/php/prism.js" defer></script>
     <link rel="shortcut icon" href="/php/images/PHP-logo.svg" type="image/x-icon">
 </head>
 <body>
