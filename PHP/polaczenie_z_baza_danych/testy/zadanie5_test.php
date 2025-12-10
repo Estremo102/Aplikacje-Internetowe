@@ -1,6 +1,5 @@
 <?php
     $correct = true;
-    $dbname = null;
     
     if(!isset($dbname)) {
         $correct = false;

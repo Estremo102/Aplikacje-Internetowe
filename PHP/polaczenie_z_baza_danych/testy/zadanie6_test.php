@@ -1,8 +1,5 @@
 <?php
     $correct = true;
-    $dbname = null;
-    
-    include __DIR__.'/../zadanie4.php';
     
     if(!isset($dbname)) {
         $correct = false;
@@ -50,4 +47,6 @@
         $progress++;
         echo "<Script>this.document.querySelectorAll('nav ul li')[5].classList.add('done');</Script>";
     }
+    
+    echo "<Script>this.document.querySelector('.navbox nav progress').value = \"$progress\";</script>";
 ?>
