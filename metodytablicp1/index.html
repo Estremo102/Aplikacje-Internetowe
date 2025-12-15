@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metody tablic 1</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="zadanie1.js" defer></script>
+    <script src="zadanie2.js" defer></script>
+    <script src="zadanie3.js" defer></script>
+    <script src="zadanie4.js" defer></script>
+    <script src="zadanie5.js" defer></script>
+    <script src="zadanie6.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Temat</h1>
+    </header>
+    <div class="navbox">
+        <nav>
+            <ul>
+                <li><a href="#zadanie1">Zadanie 1</a></li>
+                <li><a href="#zadanie2">Zadanie 2</a></li>
+                <li><a href="#zadanie3">Zadanie 3</a></li>
+                <li><a href="#zadanie4">Zadanie 4</a></li>
+                <li><a href="#zadanie5">Zadanie 5</a></li>
+                <li><a href="#zadanie6">Zadanie 6</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="content">
+        <aside>
+            <div>
+                Postaraj się wykonać zadania samodzielnie bez pomocy AI. Jeśli nad czymś utkniesz śmiało zadawaj pytania, a spróbuję Cię naprowadzić na rozwiązanie. <br><br>
+                Rozwiązania zadań umieść w plikach zadanie1.js, zadanie2.js, zadanie3.js, zadanie4.js, zadanie5.js oraz zadanie6.js, a następnie odśwież stronę by zobaczyć czy zadanie wykonano poprawnie. <br><br>
+                Poprawnie wykonane zadania spowodują zaznaczenie na zielono przycisku nawigacyjnego.
+            </div>
+        </aside>
+        <main>
+            <section id="zadanie1">
+                <h2>Zadanie 1</h2>
+                <h3>Metoda push()</h3>
+                <p>Funkcja push(el1, el2*...) wstawia jeden lub więcej elementów na końcu tablicy, po czym zwraca jej długość:</p> 
+                <pre><code>const tab = ["Marcin", "Ania", "Agnieszka"];
+tab.push("Grzegorz");
+console.log(tab) //["Marcin", "Ania", "Agnieszka", "Grzegorz"]
+tab.push("Piotr", "Karol");
+console.log(tab) //["Marcin", "Ania", "Agnieszka", "Grzegorz", "Piotr", "Karol"]
+
+Funkcja pop() w przeciwieństwie do push() zabiera ostatni element z tablicy i go zwraca:
+
+const tab = ["Marcin", "Ania", "Agnieszka"];</code></pre>
+                <p>Twoim zadaniem jest napisanie funkcji myPush() która odwzoruje działanie wyżej omówionej metody.</p>
+                <pre><code id="z1s">//Tutaj znajdzie się twój kod gdy dodasz go do pliku zadanie1.js</code></pre>
+            </section>
+            <section id="zadanie2">
+                <h2>Zadanie 2</h2>
+                <h3>Metoda pop()</h3>
+                <p>Funkcja pop() w przeciwieństwie do push() zabiera ostatni element z tablicy i go zwraca:</p>
+                <pre><code>const tab = ["Marcin", "Ania", "Agnieszka"];
+const last =  tab.pop();
+
+console.log(last); //Agnieszka
+console.log(tab); //[Marcin, Ania]</code></pre>
+                <p>Twoim zadaniem jest napisanie funkcji myPop() która odwzoruje działanie wyżej omówionej metody.</p>
+               <pre><code id="z2s">//Tutaj znajdzie się twój kod gdy dodasz go do pliku zadanie2.js</code></pre>
+            </section>
+            <section id="zadanie3">
+                <h2>Zadanie 3</h2>
+                 <h3>Metody unshift() i shift()</h3>
+                <p>Funkcja unshift(el1, el2*...) wstawia jeden lub kilka elementów na początku tablicy, po czym zwraca nową długość tablicy.</p>
+                <pre><code>const tab = ["Marcin", "Ania", "Agnieszka"];
+tab.unshift("Bartek");
+console.log(tab); //[Bartek, Marcin, Ania, Agnieszka]
+tab.unshift("Piotrek", "Paweł");
+console.log(tab); //[Piotrek, Paweł, Bartek, Marcin, Ania, Agnieszka]</code></pre>
+                <p>Funkcja shift() natomiast usuwa pierwszy element z tablicy i zwraca jego wartość:</p>
+                <pre><code>const tab = ["Marcin", "Ania", "Agnieszka"];
+const first = tab.shift();
+
+console.log(tab); //[Ania, Agnieszka]
+console.log(first); //Marcin</code></pre>
+                <p>Twoim zadaniem jest napisanie funkcji myShift() i myUnshift() które odwzorują działanie wyżej omówionych metod.</p>
+                <pre><code id="z3s">//Tutaj znajdzie się twój kod gdy dodasz go do pliku zadanie3.js</code></pre>
+                </section>
+            <section id="zadanie4">
+                <h2>Zadanie 4</h2>
+                <h3>Funkcja join()</h3>
+                <p>Funkcja join(separator) służy do łączenia kolejnych elementów tablicy w jeden wspólny tekst.
+Opcjonalny parametr separator oznacza tekst, który będzie oddzielał kolejne elementy w utworzonym tekście. Domyślnie jego wartość to ,: </p>
+                <pre><code>const ourTable = ["Marcin", "Ania", "Agnieszka"];
+
+console.log(ourTable.join()); //Marcin,Ania,Agnieszka
+
+console.log(ourTable.join(" - ")); //Marcin - Ania - Agnieszka
+
+console.log(ourTable.join(" &lt;--&gt; ")); //Marcin &lt;--&gt; Ania &lt;--&gt; Agnieszka
+
+//zliczam liczbę liter w tablicy
+const cars = ["Mercedes", "Audi", "BMW"];
+console.log(cars.join("").length); //15</code></pre>
+                <p>Twoim zadaniem jest napisanie funkcji myJoin() która odwzoruje działanie wyżej omówionej metody.</p>
+                <pre><code id="z4s">//Tutaj znajdzie się twój kod gdy dodasz go do pliku zadanie4.js</code></pre>
+            </section>
+            <section id="zadanie5">
+                <h2>Zadanie 5</h2>
+                <h3>Funkcja split()</h3>
+                <p>skoro powyżej zamieniliśmy tablicę na tekst, to spróbujmy zrobić to w drugą stronę. Aby to zrobić, wystarczy użyć składni spread:</p>
+                <pre><code>const txt = "ziemniak";
+const tab = [...txt];
+console.log(tab); //["z", "i", "e", "m", "n", "i", "a", "k"]</code></pre>
+                <p>Jeżeli chcielibyśmy tekst podzielić na podstawie znaku podziału, użyjemy do tego funkcji split() dostępnej dla tekstów:</p>
+                <pre><code>const txt = "Ala ma kota";
+const tab = txt.split(" ");
+console.log(tab); //["Ala", "ma", "kota"];</code></pre>
+                <p>Twoim zadaniem jest napisanie metody mySplit() która odwzoruje działanie wyżej omówionej metody.</p>
+                <pre><code id="z5s">//Tutaj znajdzie się twój kod gdy dodasz go do pliku zadanie5.js</code></pre>
+            </section>
+            <section id="zadanie6">
+                <h2>Zadanie 6</h2>
+                <h3>Funkcja reverse()</h3>
+                <p>Funkcja reverse() służy do odwracania kolejności tablicy: </p>
+                <pre><code>const tab = [1, 2, 3, 4];
+tab.reverse()
+console.log(tab); //[4, 3, 2, 1]</code></pre>
+                <pre><code>const word = "kajak";
+const tab = [...word];
+console.log(tab.reverse().join("") === tab.join("")); //true czyli palindrom</code></pre>
+                <p>Twoim zadaniem jest napisanie metody myReverse() która odwzoruje działanie wyżej omówionej metody.</p>
+                <pre><code id="z6s">//Tutaj znajdzie się twój kod gdy dodasz go do pliku zadanie6.js</code></pre>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2025</p>
+    </footer>
+</body>
+</html>

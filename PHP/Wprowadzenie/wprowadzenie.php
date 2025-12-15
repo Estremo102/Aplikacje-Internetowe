@@ -1,29 +1,5 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP - wprowadzenie
-    </title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-</head>
-<body>
-    <header>
-        <h1>PHP wprowadzenie</h1>
-    </header>
-    <div class="navbox">
-        <nav>
-            <ul>
-                <li><a href="#zadanie1">Zadanie 1</a></li>
-                <li><a href="#zadanie2">Zadanie 2</a></li>
-                <li><a href="#zadanie3">Zadanie 3</a></li>
-                <li><a href="#zadanie4">Zadanie 4</a></li>
-                <li><a href="#zadanie5">Zadanie 5</a></li>
-                <li><a href="#zadanie6">Zadanie 6</a></li>
-            </ul>
-        </nav>
-    </div>
+<?php include $_SERVER['DOCUMENT_ROOT'].'/php/head.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'].'/php/navbox.php'; ?>
     <div class="content">
         <aside>
             <div>
@@ -195,8 +171,4 @@ Wynik powyższego kodu to:
             </section>
         </main>
     </div>
-    <footer>
-        <p>&copy; 2025</p>
-    </footer>
-</body>
-</html>
+<?php include $_SERVER['DOCUMENT_ROOT'].'/php/foot.php'; ?>
