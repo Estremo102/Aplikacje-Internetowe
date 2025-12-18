@@ -10,6 +10,10 @@ header h1{
     padding: 25px;
 }
 
+header img {
+    float: left;
+}
+
 section{
     margin: 10px;
     padding: 10px;
