@@ -1,2 +1,17 @@
-<h3>Tytul zadania</h3>
-<p>tresc zadania Lorem ipsum dolor sit amet consectetur adipisicing elit. A dignissimos distinctio explicabo, assumenda accusantium quod obcaecati laborum, nam odio aspernatur natus ratione tempore nisi ab odit minima saepe et alias!</p>
+<h3>wartość całkowita zmiennej</h3>
+<p>Funkcja intval() służy do pobierania wartości całkowitej zmiennej.</p>
+<pre><code class="language-php">$x = 23465.768;
+echo intval($x);
+
+echo "&lt;br&gt;";
+
+$x = "23465.768";
+echo intval($x);</code></pre>
+<h4>Wynik:</h4>
+<pre><code><?php $x = 23465.768;
+echo intval($x);
+
+echo "<br>";
+
+$x = "23465.768";
+echo intval($x);?></code></pre>
