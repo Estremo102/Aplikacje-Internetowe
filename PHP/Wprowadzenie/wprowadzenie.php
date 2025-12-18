@@ -75,7 +75,7 @@ $y = "Jan";</code></pre>
                     </ul>
                 </p>
                 <p>Aby uzyskać typ danych zmiennej, należy użyć funkcji var_dump().</p>
-                <pre><code>&lt?php
+                <pre><code class="language-php">&lt?php
     var_dump(5) . "&ltbr&gt";
     var_dump("John") . "&ltbr&gt";
     var_dump(3.14) . "&ltbr&gt";
@@ -124,7 +124,7 @@ $y = "Jan";</code></pre>
                 <h2>Zadanie 6</h2>
                 <h3>Słowa kluczowe global i static</h3>
                 <p>Słowo kluczowe global służy do dostępu do zmiennej globalnej z poziomu funkcji. Aby to zrobić, użyj słowa kluczowego global przed zmiennymi (wewnątrz funkcji):</p>
-                <pre><code>&lt?php
+                <pre><code class="language-php">&lt?php
     $x = 5;
     function Test2() {
         global $x;
@@ -142,7 +142,7 @@ $x = 5;
     Test2();
     ?></code></pre>
                 <p>Słowo kluczowe static służy do deklarowania zmiennych statycznych wewnątrz funkcji. Zmienne statyczne zachowują swoją wartość między wywołaniami funkcji:</p>
-                <pre><code>&lt?php
+                <pre><code class="language-php">&lt?php
     function Test3() {
         static $x = 0;
         echo $x;

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         <?php 
-            $title = ucfirst(explode('.', basename($_SERVER['PHP_SELF']))[0]);
+            $title = isset($title) ? $title : ucfirst(explode('.', basename($_SERVER['PHP_SELF']))[0]);
             $title = $title == 'Index' ? 'Strona Główna' : $title;
             $title = str_replace("_", " ", $title);
             echo $title;
