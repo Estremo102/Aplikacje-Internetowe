@@ -1,0 +1,3 @@
+ <?php
+$progress = 0;
+?> 
