@@ -12,9 +12,9 @@
             for ($i = 1; $i <= 6; $i++) {
                 echo "<section id=\"zadanie$i\">
                 <h2>Zadanie $i</h2>";
-                include "$src/zadania/zadanie${i}_opis.php";
+                include "$src\\zadania\\zadanie${i}_opis.php";
                 echo "<div class=\"solution-container\">";
-                include "$src/testy/zadanie${i}_test.php";
+                include "$src\\testy\\zadanie${i}_test.php";
                 echo '</div></section>';   
             }
         ?>
