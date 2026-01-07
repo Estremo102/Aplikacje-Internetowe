@@ -2,7 +2,7 @@
 <div class="content">
     <aside>
         <ul>
-            <a href="/php/wprowadzenie/wprowadzenie.php"><li>Wprowadzenie</li></a>
+            <a href="temat.php?title=Wprowadzenie&src=Wprowadzenie"><li>Wprowadzenie</li></a>
             <a href="/php/typy_danych/typy_danych.php"><li>Typy danych</li></a>
             <a href="temat.php?title=Konwersja Typów&src=konwersja_typow"><li>konwersja typów danych</li></a>
             <a href="/php/polaczenie_z_baza_danych/polaczenie_z_baza_danych.php"><li>Połączenie z bazą danych</li></a>

@@ -104,13 +104,16 @@ aside ul li:hover{
 }
 
 pre{
-    width: 90%;
-    margin: 20px auto;
-    background-color: #1E1E1E;
+    background-color: #2d2d2d;
     color: #D4D4D4;
     padding: 2px 4px;
     border-radius: 4px;
     font-family: 'Courier New', Courier, monospace;
+}
+
+code{
+    width: 90%;
+    margin: 20px auto;
 }
 
 .green{
