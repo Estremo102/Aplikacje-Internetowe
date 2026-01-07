@@ -1,4 +1,5 @@
 <?php
+include __DIR__.'\..\rozwiazania\zadanie4.php';
     $correct = true;
 
     if (!isset($wynik)) {

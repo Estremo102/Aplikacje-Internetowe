@@ -1,4 +1,5 @@
 <?php 
+include __DIR__.'\..\rozwiazania\zadanie5.php';
     $correct = true;
     if(!isset($pi, $miasto))
     {
