@@ -15,3 +15,5 @@ echo "<br>";
 
 $x = "23465.768";
 echo intval($x);?></code></pre>
+
+<p>Twoim zadaniem jest przekonwertować zmienną $x do typu całkowitego i zapisać ją do zmiennej $x_converted.</p>
