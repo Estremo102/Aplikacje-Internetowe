@@ -1,3 +1,3 @@
 <?php
-    // $x_converted = intval($x);
+    $x_converted = intval($x);
 ?>

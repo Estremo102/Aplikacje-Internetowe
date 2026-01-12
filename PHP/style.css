@@ -120,6 +120,17 @@ code{
     color: #6A9955 !important;  
 }
 
+.changed{
+    transform-origin: center;
+    animation: grow-shrink 2s ease-in-out 1 forwards;
+}
+
+@keyframes grow-shrink {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
 .pink{
     color: #C586C0;  
 }

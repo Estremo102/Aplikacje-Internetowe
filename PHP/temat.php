@@ -20,4 +20,17 @@
         ?>
     </main>
 </div>
+<script defer> 
+    let buttons = this.document.querySelectorAll('nav ul li');
+    for(let i = 0; i < buttons.length; i++) {
+        if(buttons[i].classList.contains('done')) {
+            if( localStorage.getItem(i+'exercise') !== 'true') {
+                buttons[i].classList.add('changed');
+            }
+            localStorage.setItem(i+'exercise', 'true');
+        } else {
+            localStorage.setItem(i+'exercise', 'false');
+        }
+    }
+</script>
 <?php include $_SERVER['DOCUMENT_ROOT'].'/php/foot.php'; ?>
