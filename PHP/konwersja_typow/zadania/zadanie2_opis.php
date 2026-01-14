@@ -1,8 +1,8 @@
 <h3>Rzutowanie typu PHP</h3>
 <p>
-Rzutowanie typu PHP to jawny proces konwersji wartości z jednego typu danych na inny, na przykład z float na integer.
-Daje to programiście bezpośrednią kontrolę nad typem danych zmiennej.
-Rzutowanie zmiennej odbywa się poprzez umieszczenie typu rzutowania w nawiasach przed zmienną lub wartością, którą chcesz przekonwertować.
+    Rzutowanie typu PHP to jawny proces konwersji wartości z jednego typu danych na inny, na przykład z float na integer.
+    Daje to programiście bezpośrednią kontrolę nad typem danych zmiennej.
+    Rzutowanie zmiennej odbywa się poprzez umieszczenie typu rzutowania w nawiasach przed zmienną lub wartością, którą chcesz przekonwertować.
 </p>
 <ul>
     Operatory rzutowania PHP to:
@@ -14,3 +14,7 @@ Rzutowanie zmiennej odbywa się poprzez umieszczenie typu rzutowania w nawiasach
     <li>(object) - Konwertuje na typ danych Object</li>
     <li>(unset) - Przestarzałe. Konwertuje na typ danych NULL</li>
 </ul>
+<p>
+    Twoim zadaniem jest napisanie skryptu PHP, który zrobi to samo co funkcja intval(), przekonwertuje zmienną $x na typ integer,
+    ale używając operatora rzutowania typu zamiast funkcji. 
+</p>
