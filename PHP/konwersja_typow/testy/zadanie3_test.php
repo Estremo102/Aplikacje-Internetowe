@@ -15,6 +15,5 @@
     $f = (float) $f;
     $g = (float) $g;
     include __DIR__ . '/../rozwiazania/zadanie3.php';
-    
-    'float(5) float(5.34) float(25) float(0) float(0) float(1) float(0) ';
+    echo '<script>if(document.querySelector("#zadanie3 .solution-container").innerText === "float(5) float(5.34) float(25) float(0) float(0) float(1) float(0)") { progress[2] = 1; }</script>';
 ?>
