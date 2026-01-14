@@ -7,8 +7,7 @@
     } else {
         if($x_converted == (int)$x) {
             echo $x_converted;
-            $progress++;
-            echo "<Script>this.document.querySelectorAll('nav ul li')[1].classList.add('done');</Script>";      
+            echo "<Script>progress[1] = 1;</Script>";      
         } else {
             echo "Błąd konwersji.";
         }

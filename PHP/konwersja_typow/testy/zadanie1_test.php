@@ -1,5 +1,5 @@
  <?php
-    $progress = 0;
+    echo '<script>let progress = [0, 0, 0, 0, 0, 0];</script>';
     $x = 98765.4321;
         include __DIR__ . '/../rozwiazania/zadanie1.php';
     if(!isset($x_converted)) {
@@ -7,8 +7,7 @@
     } else {
         if($x_converted == intval($x)) {
             echo $x_converted;
-            $progress++;
-            echo "<Script>this.document.querySelectorAll('nav ul li')[0].classList.add('done');</Script>";      
+            echo "<Script>progress[0] = 1;</Script>";      
         } else {
             echo "Błąd konwersji.";
         }
