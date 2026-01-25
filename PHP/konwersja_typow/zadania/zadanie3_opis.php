@@ -17,5 +17,5 @@ $e = (float) $e;
 $f = (float) $f;
 $g = (float) $g;
 ?&gt;</code></pre>
-<p> wyświetl wartości zmiennych <code>$a</code>, <code>$b</code>, <code>$c</code>, <code>$d</code>, <code>$e</code>, <code>$f</code> i <code>$g</code> po konwersji do typu float.</p>
+<p>wyświetl wartości zmiennych <code>$a</code>, <code>$b</code>, <code>$c</code>, <code>$d</code>, <code>$e</code>, <code>$f</code> i <code>$g</code> po konwersji do typu float.</p>
 <p>Użyj funkcji <code>var_dump()</code>, aby wyświetlić zarówno typ, jak i wartość każdej zmiennej po konwersji. Następnie przeanalizuj wyniki.</p>

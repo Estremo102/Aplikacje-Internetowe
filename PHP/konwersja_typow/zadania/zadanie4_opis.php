@@ -11,5 +11,5 @@ $gg = "";      // String
 $hh = true;    // Boolean
 $ii = NULL;    // NULL
 ?&gt;</code></pre>
-<p> zrzutuj dane do typu Boolean i wyświetl wartości zmiennych <code>$aa</code>, <code>$bb</code>, <code>$cc</code>, <code>$dd</code>, <code>$ee</code>, <code>$ff</code>, <code>$gg</code> i <code>$ii</code> po konwersji do typu Boolean.</p>
+<p>zrzutuj dane do typu Boolean i wyświetl wartości zmiennych <code>$aa</code>, <code>$bb</code>, <code>$cc</code>, <code>$dd</code>, <code>$ee</code>, <code>$ff</code>, <code>$gg</code> i <code>$ii</code> po konwersji do typu Boolean.</p>
 <p>Użyj funkcji <code>var_dump()</code>, aby wyświetlić zarówno typ, jak i wartość każdej zmiennej po konwersji. Następnie przeanalizuj wyniki.</p>
