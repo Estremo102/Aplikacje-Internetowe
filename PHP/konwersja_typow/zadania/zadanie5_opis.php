@@ -19,5 +19,5 @@ class Car {
     $e = NULL;    // NULL
     $f = new Car("red", "Volvo");
 ?&gt;</code></pre>
-<p>zrzutuj dane do typu Array i wyświetl wartości zmiennych <code>$a</code>, <code>$b</code>, <code>$c</code>, <code>$d</code>, <code>$e</code> i <code>$f</code> po konwersji do tablicy.</p>
+<p>Zrzutuj dane do typu Array i wyświetl wartości zmiennych <code>$a</code>, <code>$b</code>, <code>$c</code>, <code>$d</code>, <code>$e</code> i <code>$f</code> po konwersji do tablicy.</p>
 <p>Użyj funkcji <code>var_dump()</code>, aby wyświetlić zarówno typ, jak i wartość każdej zmiennej po konwersji. Następnie przeanalizuj wyniki.</p>
