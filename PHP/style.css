@@ -104,17 +104,31 @@ aside ul li:hover{
 }
 
 pre{
-    width: 90%;
-    margin: 20px auto;
-    background-color: #1E1E1E;
+    background-color: #2d2d2d;
     color: #D4D4D4;
     padding: 2px 4px;
     border-radius: 4px;
     font-family: 'Courier New', Courier, monospace;
 }
 
+code{
+    width: 90%;
+    margin: 20px auto;
+}
+
 .green{
     color: #6A9955 !important;  
+}
+
+.changed{
+    transform-origin: center;
+    animation: grow-shrink 1s ease-in-out 1 forwards;
+}
+
+@keyframes grow-shrink {
+    0%   { transform: scale(1); }
+    35%  { transform: scale(1.2); }
+    100% { transform: scale(1); }
 }
 
 .pink{

@@ -1,4 +1,5 @@
 <?php 
+include __DIR__.'\..\rozwiazania\zadanie6.php';
     $correct = true;
     if(!isset($int, $f, $inf, $nan, $number))
     {

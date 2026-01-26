@@ -1,4 +1,5 @@
 <?php 
+include __DIR__.'\..\rozwiazania\zadanie1.php';
     $correct = true;
     $progress = 0;
     if(!isset($string, $integer, $float, $boolean, $array))
