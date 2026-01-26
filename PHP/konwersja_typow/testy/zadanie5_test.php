@@ -17,5 +17,5 @@
     $e = NULL;    // NULL
     $f = new Car("red", "Volvo");
     include __DIR__ . '/../rozwiazania/zadanie5.php';
-    echo '<script>if(document.querySelector("#zadanie5 .solution-container").innerText.replaceAll("\\n", " ") === \'object(stdClass)#2 (1) { ["scalar"]=> int(5) } object(stdClass)#3 (1) { ["scalar"]=> float(5.34) } object(stdClass)#4 (1) { ["scalar"]=> string(5) "hello" } object(stdClass)#5 (1) { ["scalar"]=> bool(true) } object(stdClass)#6 (0) { } object(Car)#1 (2) { ["color"]=> string(3) "red" ["model"]=> string(5) "Volvo" }\') { progress[4] = 1; }</script>';
+    echo '<script>if(document.querySelector("#zadanie5 .solution-container").innerText.replaceAll("\\n", " ") === \'array(1) { [0]=> int(5) } array(1) { [0]=> float(5.34) } array(1) { [0]=> string(5) "hello" } array(1) { [0]=> bool(true) } array(0) { } array(2) { ["color"]=> string(3) "red" ["model"]=> string(5) "Volvo" }\') { progress[4] = 1; }</script>';
 ?>
