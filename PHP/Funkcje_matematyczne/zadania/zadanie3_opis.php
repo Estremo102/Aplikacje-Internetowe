@@ -1,2 +1,4 @@
-<h3>Opis zadania 3</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid pariatur porro dicta perferendis quibusdam soluta recusandae. Accusantium ducimus perspiciatis velit, vitae tempore ipsum, cum incidunt illum exercitationem fuga repellendus doloribus.</p>
+<h3>Funkcja abs()</h3>
+<p>Funkcja abs() zwraca wartość bezwzględną</p>
+<pre><code class="language-php">echo(abs(-6.7));</code></pre>
+<pre><code><?php echo(abs(-6.7)); ?></code></pre>

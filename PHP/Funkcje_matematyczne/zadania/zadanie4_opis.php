@@ -1,2 +1,4 @@
-<h3>Opis zadania 4</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid pariatur porro dicta perferendis quibusdam soluta recusandae. Accusantium ducimus perspiciatis velit, vitae tempore ipsum, cum incidunt illum exercitationem fuga repellendus doloribus.</p>
+<h3>Funkcja sqrt()</h3>
+<p>Funkcja sqrt() zwraca pierwiastek kwadratowy</p>
+<pre><code class="language-php">echo(sqrt(64));</code></pre>
+<pre><code><?php echo(sqrt(64)); ?></code></pre>

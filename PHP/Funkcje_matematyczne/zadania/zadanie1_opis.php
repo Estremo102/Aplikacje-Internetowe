@@ -1,2 +1,4 @@
-<h3>Opis zadania 1</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid pariatur porro dicta perferendis quibusdam soluta recusandae. Accusantium ducimus perspiciatis velit, vitae tempore ipsum, cum incidunt illum exercitationem fuga repellendus doloribus.</p>
+<h3>Funkcja pi()</h3>
+<p>Funkcja pi() zwraca wartość PI:</p>
+<pre><code class="language-php">echo(pi());</code></pre>
+<pre><code><?php echo(pi()); ?></code></pre>

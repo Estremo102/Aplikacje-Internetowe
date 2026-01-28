@@ -5,6 +5,7 @@
             <a href="temat.php?title=Wprowadzenie&src=Wprowadzenie"><li>Wprowadzenie</li></a>
             <a href="temat.php?title=Typy danych&src=Typy_danych"><li>Typy danych</li></a>
             <a href="temat.php?title=Konwersja Typów&src=konwersja_typow"><li>konwersja typów danych</li></a>
+            <a href="temat.php?title=Funkcje matematyczne&src=Funkcje_matematyczne"><li>Funkcje Matematyczne</li></a>
             <a href="temat.php?title=Połączenie z bazą danych&src=polaczenie_z_baza_danych"><li>Połączenie z bazą danych</li></a>
         </ul>
     </aside>
