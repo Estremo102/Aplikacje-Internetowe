@@ -9,12 +9,12 @@
     </aside>
     <main>
         <?php
-            for ($i = 1; $i <= 6; $i++) {
-                echo "<section id=\"zadanie$i\">
-                <h2>Zadanie $i</h2>";
-                include "$src\\zadania\\zadanie${i}_opis.php";
+            for ($iii = 1; $iii <= 6; $iii++) {
+                echo "<section id=\"zadanie$iii\">
+                <h2>Zadanie $iii</h2>";
+                include "$src\\zadania\\zadanie${iii}_opis.php";
                 echo "<div class=\"solution-container\">";
-                include "$src\\testy\\zadanie${i}_test.php";
+                include "$src\\testy\\zadanie${iii}_test.php";
                 echo '</div></section>';   
             }
         ?>
