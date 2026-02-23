@@ -11,4 +11,4 @@
     <li>__TRAIT__ Jeśli użyta wewnątrz cechy, zwracana jest nazwa cechy.</li>
     <li>ClassName::class Zwraca nazwę określonej klasy i nazwę przestrzeni nazw, jeśli istnieje.</li>
 </ul>
-<p></p>
+<p>Wyświetl wszystkie stałe i sprawdź które zwrócą jakąś wartość, a które zwrócą NULL</p>

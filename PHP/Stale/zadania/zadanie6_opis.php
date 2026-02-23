@@ -1,2 +1,3 @@
-<h3>Opis zadania 6</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid pariatur porro dicta perferendis quibusdam soluta recusandae. Accusantium ducimus perspiciatis velit, vitae tempore ipsum, cum incidunt illum exercitationem fuga repellendus doloribus.</p>
+<h3>Foldery nadrzędne</h3>
+<p>Dodając w ścieżce pliku /../ możesz odwołać się do folderu nadrzędnego.</p>
+<p>Tym razem utwórz plik html w folderze nadrzędnym i wykonaj podobną operację jak w poprzednim zadaniu ale z użyciem /../. Jesli napotkasz na problemy, zajrzyj np do pliku zadanie2_test.php i zobacz jak wygląda ścieżka załączająca plik zadanie2.php</p>
