@@ -14,7 +14,9 @@
                 <h2>Zadanie $iii</h2>";
                 include "$src\\zadania\\zadanie${iii}_opis.php";
                 echo "<div class=\"solution-container\">";
+                ob_start();
                 include "$src\\testy\\zadanie${iii}_test.php";
+                echo ob_get_clean();
                 echo '</div></section>';   
             }
         ?>
