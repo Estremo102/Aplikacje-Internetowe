@@ -18,9 +18,12 @@
                 <h2>Zadanie $i</h2>";
                 include "$src\\zadania\\zadanie${i}_opis.php";
                 echo "<div class=\"solution-container\">";
-                $output = shell_exec("$php $src\\testy\\zadanie${i}_test.php");
+                exec("$php $src\\testy\\zadanie${i}_test.php", $lines, $exitCode);
+                $output = implode("\n", $lines);
+                echo $exitCode;
                 echo $output;
-                echo '</div></section>';   
+                echo '</div></section>'; 
+                $lines = NULL;  
             }
         ?>
     </main>
