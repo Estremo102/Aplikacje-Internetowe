@@ -9,16 +9,13 @@
     </aside>
     <main>
         <?php
-            function render_modul($i, $src)  {
-                include "$src\\testy\\zadanie${i}_test.php";
-            }
-            
             for ($i = 1; $i <= 6; $i++) {
                 echo "<section id=\"zadanie$i\">
                 <h2>Zadanie $i</h2>";
                 include "$src\\zadania\\zadanie${i}_opis.php";
                 echo "<div class=\"solution-container\">";
-                render_modul($i, $src);
+                $output = shell_exec("C:\\xampp\\php\\php.exe $src\\testy\\zadanie${i}_test.php");
+                echo $output;
                 echo '</div></section>';   
             }
         ?>
