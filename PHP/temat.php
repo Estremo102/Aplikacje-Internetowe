@@ -20,8 +20,17 @@
                 echo "<div class=\"solution-container\">";
                 exec("$php $src\\testy\\zadanie${i}_test.php", $lines, $exitCode);
                 $output = implode("\n", $lines);
-                echo $exitCode;
-                echo $output;
+                switch ($exitCode) {
+                    case 0:
+                        echo $output;
+                        break;
+                    case 255:
+                        echo "BŁĄD KRYTYCZNY 255: " . $output;
+                        break;
+                    default:
+                        echo "NIEZNANY BŁĄD $exitCode: " . $output;
+                        break;
+                }
                 echo '</div></section>'; 
                 $lines = NULL;  
             }
