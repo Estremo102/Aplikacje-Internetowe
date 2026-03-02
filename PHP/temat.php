@@ -25,7 +25,7 @@
                         echo $output;
                         break;
                     case 255:
-                        echo "BŁĄD KRYTYCZNY 255: " . $output;
+                        echo "<span class=\"error\">BŁĄD KRYTYCZNY 255:</span> " . $output;
                         break;
                     default:
                         echo "NIEZNANY BŁĄD $exitCode: " . $output;

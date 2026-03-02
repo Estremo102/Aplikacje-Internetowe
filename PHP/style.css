@@ -261,3 +261,8 @@ progress::-moz-progress-bar {
 progress::-webkit-progress-value {
     background-color: #77b379;
 }
+
+span.error {
+    color: #ff0000;
+    font-weight: bold;
+}
