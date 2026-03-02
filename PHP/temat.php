@@ -1,6 +1,10 @@
-<?php $title = $_GET['title'] ?? null; $src = $_GET['src'] ?? null; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/php/head.php'; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/php/navbox.php'; ?>
+<?php 
+    $title = $_GET['title'] ?? null; 
+    $src = $_GET['src'] ?? null; 
+    include $_SERVER['DOCUMENT_ROOT'].'/php/head.php'; 
+    include $_SERVER['DOCUMENT_ROOT'].'/php/navbox.php'; 
+    $php = "C:\\xampp\\php\\php.exe"
+?>
 <div class="content">
     <aside>
         <ul>
@@ -14,7 +18,7 @@
                 <h2>Zadanie $i</h2>";
                 include "$src\\zadania\\zadanie${i}_opis.php";
                 echo "<div class=\"solution-container\">";
-                $output = shell_exec("C:\\xampp\\php\\php.exe $src\\testy\\zadanie${i}_test.php");
+                $output = shell_exec("$php $src\\testy\\zadanie${i}_test.php");
                 echo $output;
                 echo '</div></section>';   
             }
