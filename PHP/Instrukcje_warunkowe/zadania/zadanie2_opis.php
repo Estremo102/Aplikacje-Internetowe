@@ -15,6 +15,11 @@
     <pre><code class="language-php">if (warunek_logiczny) {
         // kod który wykona się jeśli warunek logiczny jest prawdziwy
     }</code></pre>
-    przykład
+    przykład:
+    <pre><code class="language-php">$zmienna = true;
+        
+if ($zmienna) {
+    echo "Miłego dnia!";
+}</code></pre>
 </p>
 <p>Zadanie: W kodzie masz dostęp do zmiennej $warunek_logiczny. Jest to zmienna typu boolean. Jeśli jest prawdą wyświetl napis "Warunek logiczny jest prawdziwy".</p>
