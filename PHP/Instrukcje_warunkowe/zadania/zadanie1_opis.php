@@ -12,11 +12,11 @@
         <li>Operatory warunkowe</li>
     </ul>
 </p>
-<p>TUTAJ WSTAWIĆ TABELE OPERATORÓW</p>
+<a href="operatory.php">Operatory omawialiśmy na ostatniej lekcji, kod który pisaliśmy znajdziesz tutaj</a>
 <h4>Operatory warunkowe</h4>
 <p>
     Operator trójargumentowy można porównać do funkcji jeżeli z excela <pre><code>=JEŻELI(test_logiczny; wartość_jeżeli_prawda; wartość_jeżeli_fałsz)</code></pre>
-    Składnia wygląda następująco: <pre>warunek ? wartość_gdy_true : wartość_gdy_false</pre> Przykład: 
+    Składnia wygląda następująco: <pre>warunek ? wartość_gdy_true : wartość_gdy_false;</pre> Przykład: 
     <pre><code class="language-php">$isAdmin = ($userRole === 'admin') ? true : false;</code></pre> 
 </p>
 <p>

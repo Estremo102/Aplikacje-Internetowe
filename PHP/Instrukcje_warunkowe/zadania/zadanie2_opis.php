@@ -17,4 +17,4 @@
     }</code></pre>
     przykład
 </p>
-<p>Zadanie</p>
+<p>Zadanie: W kodzie masz dostęp do zmiennej $warunek_logiczny. Jest to zmienna typu boolean. Jeśli jest prawdą wyświetl napis "Warunek logiczny jest prawdziwy".</p>
