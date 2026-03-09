@@ -86,11 +86,8 @@ a{
 aside ul li {
     list-style-type: none;
     background-color: #777bb3;
-    display: block;
     width: 80%;
-    margin: auto;
-    margin: 0px;
-    margin-bottom: 5px;
+    margin: 0 auto 5px;
     padding: 10px;
     border: #02074d 2px solid;
     border-radius: 5px;
@@ -99,8 +96,23 @@ aside ul li {
     font-weight: 900;
 }
 
-aside ul li:hover{
+aside ul li:hover {
     background-color: #FFF2;
+}
+
+/* make the link fill the list item so the whole area is clickable */
+aside ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+}
+
+/* active topic styling */
+aside ul li.active {
+    background-color: #5a5fcf;
+    font-weight: bold;
+    border-left: 4px solid #02074d;
 }
 
 pre{
