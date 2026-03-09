@@ -24,6 +24,15 @@
     </main>
 </div>
 <script defer> 
+    // Funkcja do aktualizacji paska postępu
+    function updateProgressBar() {
+        const doneCount = document.querySelectorAll('nav ul li.done').length;
+        const progressBar = document.querySelector('nav progress');
+        if (progressBar) {
+            progressBar.value = doneCount;
+        }
+    }
+
     // Funkcja do pobierania i przetwarzania wyników testów
     async function loadTestResults() {
         const srcPath = new URLSearchParams(window.location.search).get('src');
@@ -57,6 +66,9 @@
                         navButtons[i - 1].classList.remove('done');
                     }
                 }
+                
+                // Aktualizuj pasek postępu po każdym fetchu
+                updateProgressBar();
             } catch (error) {
                 console.error(`Błąd przy ładowaniu zadania ${i}:`, error);
                 const container = document.getElementById(`wynik-zad${i}`);
@@ -78,6 +90,9 @@
                 localStorage.setItem(i+'exercise', 'false');
             }
         }
+        
+        // Finalna aktualizacja paska postępu
+        updateProgressBar();
     }
 
     // Uruchom ładowanie wyników na załadowaniu stron
