@@ -1,18 +1,24 @@
 <?php
-    $correct = true;
-    
-    if(!isset($dbname)) {
-        $correct = false;
-        echo 'Najpierw wykonaj zadanie 4 (baza danych musi być utworzona)';
+header('Content-Type: application/json; charset=utf-8');
+
+$poprawne = false;
+$komunikaty = [];
+$dbname_global = null;
+
+try {
+    if(!isset($dbname_global)) {
+        $komunikaty[] = "✗ Najpierw wykonaj zadanie 4";
     } else {
-        include __DIR__.'/../zadanie5.php';
+        ob_start();
+        include __DIR__ . '/../zadanie5.php';
+        ob_get_clean();
         
         $servername = "localhost"; 
         $username = "root"; 
         $password = ""; 
 
         try {
-            $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+            $conn = new PDO("mysql:host=$servername;dbname=$dbname_global", $username, $password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
             $sql = "SHOW TABLES LIKE 'User'";
@@ -20,30 +26,31 @@
             $tableExists = $result->rowCount() > 0;
             
             if(!$tableExists) {
-                $correct = false;
-                echo 'Tabela User nie została utworzona';
+                $komunikaty[] = "✗ Tabela User nie została utworzona";
             } else {
                 $sql = "DESCRIBE User";
                 $result = $conn->query($sql);
                 $columns = $result->fetchAll(PDO::FETCH_COLUMN, 0);
                 
                 if(!in_array('ID', $columns) || !in_array('login', $columns) || !in_array('age', $columns)) {
-                    $correct = false;
-                    echo 'Tabela User nie ma wymaganych kolumn (ID, login, age)';
+                    $komunikaty[] = "✗ Tabela User nie ma wymaganych kolumn (ID, login, age)";
                 } else {
-                    echo 'Tabela User została utworzona poprawnie';
+                    $poprawne = true;
+                    $komunikaty[] = "✓ Tabela User została utworzona poprawnie";
                 }
             }
             
             $conn = null;
         } catch(PDOException $e) {
-            $correct = false;
-            echo "Błąd połączenia: " . $e->getMessage();
+            $komunikaty[] = "✗ Błąd połączenia: " . $e->getMessage();
         }
     }
+} catch (Exception $e) {
+    $komunikaty[] = "✗ Błąd: " . $e->getMessage();
+}
 
-    if($correct) {
-        $progress++;
-        echo "<Script>this.document.querySelectorAll('nav ul li')[4].classList.add('done');</Script>";
-    }
+echo json_encode([
+    'poprawne' => $poprawne,
+    'komunikaty' => $komunikaty
+], JSON_UNESCAPED_UNICODE);
 ?>

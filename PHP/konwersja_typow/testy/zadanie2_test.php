@@ -1,15 +1,32 @@
 <?php
+header('Content-Type: application/json; charset=utf-8');
+
+$poprawne = false;
+$komunikaty = [];
+
+try {
     $x = 98765.4321;
-    $x_converted = null;
+    
+    ob_start();
     include __DIR__ . '/../rozwiazania/zadanie2.php';
-    if(!isset($x_converted)) {
-        echo "Zmienna \$x_converted nie istnieje.";
+    ob_get_clean();
+    
+    if (!isset($x_converted)) {
+        $komunikaty[] = "✗ Zmienna \$x_converted nie istnieje";
     } else {
-        if($x_converted == (int)$x) {
-            echo $x_converted;
-            echo "<Script>progress[1] = 1;</Script>";      
+        if ($x_converted == (int)$x) {
+            $poprawne = true;
+            $komunikaty[] = "✓ Zadanie wykonane poprawnie";
         } else {
-            echo "Błąd konwersji.";
+            $komunikaty[] = "✗ Błąd konwersji. Oczekiwano: " . (int)$x . ", otrzymano: " . $x_converted;
         }
     }
+} catch (Exception $e) {
+    $komunikaty[] = "✗ Błąd: " . $e->getMessage();
+}
+
+echo json_encode([
+    'poprawne' => $poprawne,
+    'komunikaty' => $komunikaty
+], JSON_UNESCAPED_UNICODE);
 ?>

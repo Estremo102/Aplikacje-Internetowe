@@ -1,20 +1,28 @@
- <?php
-    echo '<script>let progress = [0, 0, 0, 0, 0, 0];</script>';
-    include __DIR__ . '/../rozwiazania/zadanie1.php';
-    correct = true;
-    if (!isset($conn)) {
-        $correct = false;
-        echo 'Nie nawiązano połączenia, upewnij się, że używasz zmiennej $conn (nie jest to wymóg języka, lecz testów sprawdzających poprawność wykonania zadania)';
-    }
-    else if ($conn->errorCode() == '00000') {
-        echo "Połączenie poprawne";
-    } else {
-        echo "Błąd połączenia: " . implode(", ", $conn->errorInfo());
-        $correct = false;
-    }
-    if($correct)
-    {
+<?php
+header('Content-Type: application/json; charset=utf-8');
 
-        echo "<Script>progress[0] = 1;</Script>"; 
+$poprawne = false;
+$komunikaty = [];
+
+try {
+    ob_start();
+    include __DIR__ . '/../rozwiazania/zadanie1.php';
+    ob_get_clean();
+    
+    if (!isset($conn)) {
+        $komunikaty[] = "✗ Nie nawiązano połączenia";
+    } else if ($conn->errorCode() == '00000') {
+        $poprawne = true;
+        $komunikaty[] = "✓ Połączenie poprawne";
+    } else {
+        $komunikaty[] = "✗ Błąd połączenia: " . implode(", ", $conn->errorInfo());
     }
-?> 
+} catch (Exception $e) {
+    $komunikaty[] = "✗ Błąd: " . $e->getMessage();
+}
+
+echo json_encode([
+    'poprawne' => $poprawne,
+    'komunikaty' => $komunikaty
+], JSON_UNESCAPED_UNICODE);
+?>

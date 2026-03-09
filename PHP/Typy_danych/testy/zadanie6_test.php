@@ -1,44 +1,55 @@
-<?php 
-include __DIR__.'\..\rozwiazania\zadanie6.php';
-    $correct = true;
-    if(!isset($int, $f, $inf, $nan, $number))
-    {
-        echo "Nie wszystkie zmienne zostały zadeklarowane.";
-        $correct = false;
-    }
-    else
-    {
-        if (!is_int($int))
-        {
-            echo "zmienna int jest niepoprawnego typu <br>";
-            $correct = false;
-        }
-        if (!is_float($f))
-        {
-            echo "zmienna f jest niepoprawnego typu <br>";
-            $correct = false;
-        }
-        if (!is_infinite($inf))
-        {
-            echo "zmienna inf nie jest nieskończona <br>";
-            $correct = false;
-        }
-        if (!is_nan($nan))
-        {
-            echo "zmienna nan jest niepoprawnego typu <br>";
-            $correct = false;
-        }
-        if(!is_numeric($number) || is_float($number) || is_int($number))
-        {
-            echo "zmienna number jest niepoprawnego typu <br>";
-            $correct = false;
-        }
-    }
-    if($correct)
-    {
-        $progress++;
-        echo "Zadanie wykonane poprawnie" . "<Script>this.document.querySelectorAll('nav ul li')[5].classList.add('done');</Script>";        
-    }
+<?php
+header('Content-Type: application/json; charset=utf-8');
 
-    echo "<Script>this.document.querySelector('.navbox nav progress').value = \"$progress\";</script>";
+$poprawne = false;
+$komunikaty = [];
+
+try {
+    ob_start();
+    include __DIR__ . '/../rozwiazania/zadanie6.php';
+    ob_get_clean();
+    
+    if (!isset($int, $f, $inf, $nan, $number)) {
+        $komunikaty[] = "✗ Nie wszystkie zmienne zostały zadeklarowane";
+        if (!isset($int)) $komunikaty[] = "  - brakuje \$int";
+        if (!isset($f)) $komunikaty[] = "  - brakuje \$f";
+        if (!isset($inf)) $komunikaty[] = "  - brakuje \$inf";
+        if (!isset($nan)) $komunikaty[] = "  - brakuje \$nan";
+        if (!isset($number)) $komunikaty[] = "  - brakuje \$number";
+    } else {
+        $poprawne = true;
+        
+        if (!is_int($int)) {
+            $poprawne = false;
+            $komunikaty[] = "✗ Zmienna \$int nie jest typu int";
+        }
+        if (!is_float($f)) {
+            $poprawne = false;
+            $komunikaty[] = "✗ Zmienna \$f nie jest typu float";
+        }
+        if (!is_infinite($inf)) {
+            $poprawne = false;
+            $komunikaty[] = "✗ Zmienna \$inf nie jest nieskończona";
+        }
+        if (!is_nan($nan)) {
+            $poprawne = false;
+            $komunikaty[] = "✗ Zmienna \$nan nie jest NaN";
+        }
+        if (!is_numeric($number) || is_float($number) || is_int($number)) {
+            $poprawne = false;
+            $komunikaty[] = "✗ Zmienna \$number jest niepoprawnego typu (powinna być string numeryczny)";
+        }
+        
+        if ($poprawne) {
+            $komunikaty[] = "✓ Zadanie wykonane poprawnie";
+        }
+    }
+} catch (Exception $e) {
+    $komunikaty[] = "✗ Błąd: " . $e->getMessage();
+}
+
+echo json_encode([
+    'poprawne' => $poprawne,
+    'komunikaty' => $komunikaty
+], JSON_UNESCAPED_UNICODE);
 ?>

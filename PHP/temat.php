@@ -17,37 +17,70 @@
                 echo "<section id=\"zadanie$i\">
                 <h2>Zadanie $i</h2>";
                 include "$src\\zadania\\zadanie${i}_opis.php";
-                echo "<div class=\"solution-container\">";
-                exec("$php $src\\testy\\zadanie${i}_test.php", $lines, $exitCode);
-                $output = implode("\n", $lines);
-                switch ($exitCode) {
-                    case 0:
-                        echo $output;
-                        break;
-                    case 255:
-                        echo "<span class=\"error\">BŁĄD KRYTYCZNY 255:</span> " . $output;
-                        break;
-                    default:
-                        echo "NIEZNANY BŁĄD $exitCode: " . $output;
-                        break;
-                }
-                echo '</div></section>'; 
-                $lines = NULL;  
+                echo "<div class=\"solution-container\" id=\"wynik-zad$i\"><em>Ładowanie wyniku...</em></div>";
+                echo '</section>'; 
             }
         ?>
     </main>
 </div>
 <script defer> 
-    let buttons = this.document.querySelectorAll('nav ul li');
-    for(let i = 0; i < buttons.length; i++) {
-        if(buttons[i].classList.contains('done')) {
-            if( localStorage.getItem(i+'exercise') !== 'true') {
-                buttons[i].classList.add('changed');
+    // Funkcja do pobierania i przetwarzania wyników testów
+    async function loadTestResults() {
+        const srcPath = new URLSearchParams(window.location.search).get('src');
+        
+        if (!srcPath) {
+            console.error('Brak parametru src w URL');
+            return;
+        }
+
+        for (let i = 1; i <= 6; i++) {
+            try {
+                const response = await fetch(`${srcPath}/testy/zadanie${i}_test.php`);
+                const data = await response.json();
+                
+                const container = document.getElementById(`wynik-zad${i}`);
+                if (!container) continue;
+
+                // Wyświetl komunikaty
+                if (data.komunikaty && data.komunikaty.length > 0) {
+                    container.innerHTML = data.komunikaty.join('<br>');
+                } else {
+                    container.innerHTML = data.poprawne ? '✓ Zadanie wykonane poprawnie' : '✗ Zadanie zawiera błędy';
+                }
+
+                // Ustaw klasę .done na elemencie menu
+                const navButtons = document.querySelectorAll('nav ul li');
+                if (navButtons[i - 1]) {
+                    if (data.poprawne) {
+                        navButtons[i - 1].classList.add('done');
+                    } else {
+                        navButtons[i - 1].classList.remove('done');
+                    }
+                }
+            } catch (error) {
+                console.error(`Błąd przy ładowaniu zadania ${i}:`, error);
+                const container = document.getElementById(`wynik-zad${i}`);
+                if (container) {
+                    container.innerHTML = '✗ Błąd przy ładowaniu wyniku';
+                }
             }
-            localStorage.setItem(i+'exercise', 'true');
-        } else {
-            localStorage.setItem(i+'exercise', 'false');
+        }
+
+        // Zaktualizuj localStorage na podstawie klas .done
+        let buttons = document.querySelectorAll('nav ul li');
+        for(let i = 0; i < buttons.length; i++) {
+            if(buttons[i].classList.contains('done')) {
+                if( localStorage.getItem(i+'exercise') !== 'true') {
+                    buttons[i].classList.add('changed');
+                }
+                localStorage.setItem(i+'exercise', 'true');
+            } else {
+                localStorage.setItem(i+'exercise', 'false');
+            }
         }
     }
+
+    // Uruchom ładowanie wyników na załadowaniu stron
+    document.addEventListener('DOMContentLoaded', loadTestResults);
 </script>
 <?php include $_SERVER['DOCUMENT_ROOT'].'/php/foot.php'; ?>

@@ -1,36 +1,56 @@
 <?php
-include __DIR__.'\..\rozwiazania\zadanie3.php';
-    $correct = true;
+header('Content-Type: application/json; charset=utf-8');
 
+$poprawne = false;
+$komunikaty = [];
+
+try {
+    ob_start();
+    include __DIR__ . '/../rozwiazania/zadanie3.php';
+    ob_get_clean();
+    
     if (!isset($palindromy)) {
-        echo 'Nie utworzono zmiennej palindromy';
-        $correct = false;
+        $komunikaty[] = "✗ Nie utworzono zmiennej \$palindromy";
     } else {
+        $poprawne = true;
+        
         if (!is_array($palindromy)) {
-            echo 'zmienna palindromy nie jest tablicą <br>';
-            $correct = false;
+            $poprawne = false;
+            $komunikaty[] = "✗ Zmienna \$palindromy nie jest tablicą";
         } else {
             if (count($palindromy) != 7) {
-                echo 'Tablica palindromy ma niepoprawną liczbę elementów (oczekiwano 7).<br>';
-                $correct = false;
+                $poprawne = false;
+                $komunikaty[] = "✗ Tablica \$palindromy ma niepoprawną liczbę elementów: " . count($palindromy) . " (oczekiwano: 7)";
             } else {
-                if( $palindromy[0] != 'KAMILśLIMAK' ||
-                    $palindromy[1] != 'KAJAK' ||
-                    $palindromy[2] != 'A KANAPA PANA KOTA' ||
-                    $palindromy[3] != 'KOBYłA MA MAłY BOK' ||
-                    $palindromy[4] != 'MOżE JUTRO TA DAMA SAMA DA TORTU JEżOM' ||
-                    $palindromy[5] != 'AKTA GENERAłA MA MAłA RENEGATKA' ||
-                    $palindromy[6] != 'ŁAPAł ZA KRAN, A KANARKA ZłAPAł')
-                {
-                    echo 'Dane w tablicy są niepoprawne';
-                    $correct = false;
+                $expected = [
+                    'KAMILśLIMAK',
+                    'KAJAK',
+                    'A KANAPA PANA KOTA',
+                    'KOBYłA MA MAłY BOK',
+                    'MOżE JUTRO TA DAMA SAMA DA TORTU JEżOM',
+                    'AKTA GENERAłA MA MAłA RENEGATKA',
+                    'ŁAPAł ZA KRAN, A KANARKA ZłAPAł'
+                ];
+                
+                for ($i = 0; $i < 7; $i++) {
+                    if ($palindromy[$i] != $expected[$i]) {
+                        $poprawne = false;
+                        $komunikaty[] = "✗ Element $i tablicy jest niepoprawny";
+                    }
+                }
+                
+                if ($poprawne) {
+                    $komunikaty[] = "✓ Zadanie wykonane poprawnie";
                 }
             }
         }
     }
+} catch (Exception $e) {
+    $komunikaty[] = "✗ Błąd: " . $e->getMessage();
+}
 
-    if ($correct) {
-        $progress++;
-        echo 'Zadanie wykonane poprawnie' . "<Script>this.document.querySelectorAll('nav ul li')[2].classList.add('done');</Script>";
-    }
+echo json_encode([
+    'poprawne' => $poprawne,
+    'komunikaty' => $komunikaty
+], JSON_UNESCAPED_UNICODE);
 ?>

@@ -1,43 +1,57 @@
-<?php 
-include __DIR__.'\..\rozwiazania\zadanie1.php';
-    $correct = true;
-    $progress = 0;
-    if(!isset($string, $integer, $float, $boolean, $array))
-    {
-        echo "Nie wszystkie zmienne zostały zadeklarowane.";
-        $correct = false;
+<?php
+header('Content-Type: application/json; charset=utf-8');
+
+$poprawne = false;
+$komunikaty = [];
+
+try {
+    ob_start();
+    include __DIR__ . '/../rozwiazania/zadanie1.php';
+    $output = ob_get_clean();
+    
+    // Sprawdzenie, czy zmienne zostały zadeklarowane
+    if (isset($string) && isset($integer) && isset($float) && isset($boolean) && isset($array)) {
+        $poprawne = true;
+        $komunikaty[] = "✓ Wszystkie zmienne zadeklarowane";
+        
+        if (!is_string($string)) {
+            $poprawne = false;
+            $komunikaty[] = "✗ Zmienna \$string jest niepoprawnego typu";
+        }
+        if (!is_int($integer)) {
+            $poprawne = false;
+            $komunikaty[] = "✗ Zmienna \$integer jest niepoprawnego typu";
+        }
+        if (!is_float($float)) {
+            $poprawne = false;
+            $komunikaty[] = "✗ Zmienna \$float jest niepoprawnego typu";
+        }
+        if (!is_bool($boolean)) {
+            $poprawne = false;
+            $komunikaty[] = "✗ Zmienna \$boolean jest niepoprawnego typu";
+        }
+        if (!is_array($array)) {
+            $poprawne = false;
+            $komunikaty[] = "✗ Zmienna \$array jest niepoprawnego typu";
+        }
+        
+        if ($poprawne) {
+            $komunikaty[] = "✓ Zadanie wykonane poprawnie";
+        }
+    } else {
+        $komunikaty[] = "✗ Nie wszystkie zmienne zostały zadeklarowane";
+        if (!isset($string)) $komunikaty[] = "  - brakuje \$string";
+        if (!isset($integer)) $komunikaty[] = "  - brakuje \$integer";
+        if (!isset($float)) $komunikaty[] = "  - brakuje \$float";
+        if (!isset($boolean)) $komunikaty[] = "  - brakuje \$boolean";
+        if (!isset($array)) $komunikaty[] = "  - brakuje \$array";
     }
-    else
-    {
-        if (!is_string($string))
-        {
-            echo "zmienna string jest niepoprawnego typu <br>";
-            $correct = false;
-        }
-        if (!is_int($integer))
-        {
-            echo "zmienna integer jest niepoprawnego typu <br>";
-            $correct = false;
-        }
-        if (!is_float($float))
-        {
-            echo "zmienna float jest niepoprawnego typu <br>";
-            $correct = false;
-        }
-        if (!is_bool($boolean))
-        {
-            echo "zmienna boolean jest niepoprawnego typu <br>";
-            $correct = false;
-        }
-        if (!is_array($array))
-        {
-            echo "zmienna array jest niepoprawnego typu <br>";
-            $correct = false;
-        }
-    }
-    if($correct)
-    {
-        $progress++;
-        echo "Zadanie wykonane poprawnie" . "<Script>this.document.querySelectorAll('nav ul li')[0].classList.add('done');</Script>";        
-    }
+} catch (Exception $e) {
+    $komunikaty[] = "✗ Błąd: " . $e->getMessage();
+}
+
+echo json_encode([
+    'poprawne' => $poprawne,
+    'komunikaty' => $komunikaty
+], JSON_UNESCAPED_UNICODE);
 ?>

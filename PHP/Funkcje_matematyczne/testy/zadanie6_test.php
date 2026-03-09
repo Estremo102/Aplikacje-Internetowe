@@ -1,17 +1,30 @@
 <?php
+header('Content-Type: application/json; charset=utf-8');
+
+$poprawne = false;
+$komunikaty = [];
+
+try {
+    ob_start();
     include __DIR__ . '/../rozwiazania/zadanie6.php';
-    echo '<Script> if(document.querySelector("#zadanie6 .solution-container").innerText.includes("Każdy człowiek jest pazerny i to jest to, a może się uda.") || document.querySelector("#zadanie6 .solution-container").innerText.includes("Ten kibel jest twój i mój!")) {
-        progress[5] = 1;
-    }
-    </Script>'; 
-    echo "<Script>
-    let p = 0;
-    for(let i = 0; i < progress.length; i++) {
-        if(progress[i] === 1) {
-            this.document.querySelectorAll('nav ul li')[i].classList.add('done');
-            p++;
+    $output = ob_get_clean();
+    
+    if (strpos($output, "Każdy człowiek jest pazerny i to jest to, a może się uda.") !== false || 
+        strpos($output, "Ten kibel jest twój i mój!") !== false) {
+        $poprawne = true;
+        $komunikaty[] = "✓ Zadanie wykonane poprawnie";
+    } else {
+        $komunikaty[] = "✗ Wynik niepoprawny";
+        if (!empty($output)) {
+            $komunikaty[] = "Otrzymano: " . trim($output);
         }
     }
-    this.document.querySelector('.navbox nav progress').value = p;
-    </script>";
+} catch (Exception $e) {
+    $komunikaty[] = "✗ Błąd: " . $e->getMessage();
+}
+
+echo json_encode([
+    'poprawne' => $poprawne,
+    'komunikaty' => $komunikaty
+], JSON_UNESCAPED_UNICODE);
 ?>

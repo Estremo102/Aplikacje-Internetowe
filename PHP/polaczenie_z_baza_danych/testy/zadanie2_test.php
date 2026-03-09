@@ -1,21 +1,41 @@
-<?php 
-    include __DIR__.'/../zadanie2.php';
-    $correct = true;
-    if (!isset($conn)) {
-        $correct = false;
-        echo 'Nie nawiązano połączenia, upewnij się, że używasz zmiennej $conn (nie jest to wymóg języka, lecz testów sprawdzających poprawność wykonania zadania)';
-    }
-    else if ($conn->errorCode() == '00000') {
-        echo "Połączenie poprawne";
-    } else {
-        echo "Błąd połączenia: " . implode(", ", $conn->errorInfo());
-        $correct = false;
-    }
+<?php
+header('Content-Type: application/json; charset=utf-8');
 
-    if($correct) {
-        $progress++;
-        echo "<Script>this.document.querySelectorAll('nav ul li')[1].classList.add('done');</Script>";        
-    }
+$poprawne = false;
+$komunikaty = [];
 
-    $conn = null;
+try {
+    $servername = "localhost"; 
+    $username = "root"; 
+    $password = ""; 
+
+    try {
+        $conn = new PDO("mysql:host=$servername;dbname=mysql", $username, $password);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        
+        ob_start();
+        include __DIR__ . '/../zadanie2.php';
+        ob_get_clean();
+        
+        if (!isset($conn)) {
+            $komunikaty[] = "✗ Nie nawiązano połączenia, upewnij się, że używasz zmiennej $conn";
+        } else if ($conn->errorCode() == '00000') {
+            $poprawne = true;
+            $komunikaty[] = "✓ Połączenie poprawne";
+        } else {
+            $komunikaty[] = "✗ Błąd połączenia: " . implode(", ", $conn->errorInfo());
+        }
+        
+        $conn = null;
+    } catch(PDOException $e) {
+        $komunikaty[] = "✗ Błąd: " . $e->getMessage();
+    }
+} catch (Exception $e) {
+    $komunikaty[] = "✗ Błąd: " . $e->getMessage();
+}
+
+echo json_encode([
+    'poprawne' => $poprawne,
+    'komunikaty' => $komunikaty
+], JSON_UNESCAPED_UNICODE);
 ?>

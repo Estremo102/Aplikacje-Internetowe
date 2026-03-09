@@ -1,18 +1,24 @@
 <?php
-    $correct = true;
-    
-    if(!isset($dbname)) {
-        $correct = false;
-        echo 'Najpierw wykonaj zadanie 4 (baza danych musi być utworzona)';
+header('Content-Type: application/json; charset=utf-8');
+
+$poprawne = false;
+$komunikaty = [];
+$dbname_global = null;
+
+try {
+    if(!isset($dbname_global)) {
+        $komunikaty[] = "✗ Najpierw wykonaj zadanie 4";
     } else {
-        include __DIR__.'/../zadanie6.php';
+        ob_start();
+        include __DIR__ . '/../zadanie6.php';
+        ob_get_clean();
         
         $servername = "localhost"; 
         $username = "root"; 
         $password = ""; 
 
         try {
-            $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+            $conn = new PDO("mysql:host=$servername;dbname=$dbname_global", $username, $password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
             $sql = "SELECT COUNT(*) as count FROM User";
@@ -21,32 +27,34 @@
             $rowCount = $row['count'];
             
             if($rowCount == 0) {
-                $correct = false;
-                echo 'Brak danych w tabeli User';
+                $komunikaty[] = "✗ Brak danych w tabeli User";
             } else {
                 $sql = "SELECT * FROM User LIMIT 1";
                 $result = $conn->query($sql);
                 $firstRow = $result->fetch(PDO::FETCH_ASSOC);
                 
                 if(empty($firstRow['login']) && empty($firstRow['age'])) {
-                    $correct = false;
-                    echo 'Dane w tabeli User są puste';
+                    $komunikaty[] = "✗ Dane w tabeli User są puste";
                 } else {
-                    echo "Dane zostały dodane do tabeli User pomyślnie ($rowCount rekordów)";
+                    $poprawne = true;
+                    $komunikaty[] = "✓ Dane zostały dodane do tabeli User pomyślnie ($rowCount rekordów)";
                 }
             }
             
             $conn = null;
         } catch(PDOException $e) {
-            $correct = false;
-            echo "Błąd połączenia: " . $e->getMessage();
+            $komunikaty[] = "✗ Błąd połączenia: " . $e->getMessage();
         }
     }
+} catch (Exception $e) {
+    $komunikaty[] = "✗ Błąd: " . $e->getMessage();
+}
 
-    if($correct) {
-        $progress++;
-        echo "<Script>this.document.querySelectorAll('nav ul li')[5].classList.add('done');</Script>";
-    }
+echo json_encode([
+    'poprawne' => $poprawne,
+    'komunikaty' => $komunikaty
+], JSON_UNESCAPED_UNICODE);
+?>
     
     echo "<Script>this.document.querySelector('.navbox nav progress').value = \"$progress\";</script>";
 ?>

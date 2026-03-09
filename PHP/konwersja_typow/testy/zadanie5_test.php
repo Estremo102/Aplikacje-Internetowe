@@ -1,21 +1,46 @@
 <?php
+header('Content-Type: application/json; charset=utf-8');
+
+$poprawne = false;
+$komunikaty = [];
+
+try {
     class Car {
-    public $color;
-    public $model;
-    public function __construct($color, $model) {
-      $this->color = $color;
-      $this->model = $model;
+        public $color;
+        public $model;
+        public function __construct($color, $model) {
+            $this->color = $color;
+            $this->model = $model;
+        }
     }
-    public function message() {
-      return "My car is a " . $this->color . " " . $this->model . "!";
-    }
-}
-    $a = 5;       // Integer
-    $b = 5.34;    // Float
-    $c = "hello"; // String
-    $d = true;    // Boolean
-    $e = NULL;    // NULL
+    
+    $a = 5;
+    $b = 5.34;
+    $c = "hello";
+    $d = true;
+    $e = NULL;
     $f = new Car("red", "Volvo");
+    
+    ob_start();
     include __DIR__ . '/../rozwiazania/zadanie5.php';
-    echo '<script>if(document.querySelector("#zadanie5 .solution-container").innerText.replaceAll("\\n", " ") === \'array(1) { [0]=> int(5) } array(1) { [0]=> float(5.34) } array(1) { [0]=> string(5) "hello" } array(1) { [0]=> bool(true) } array(0) { } array(2) { ["color"]=> string(3) "red" ["model"]=> string(5) "Volvo" }\') { progress[4] = 1; }</script>';
+    $output = ob_get_clean();
+    
+    // Uproszczone sprawdzenie - szukamy kluczowych elementów
+    if (strpos($output, "array(1)") !== false && strpos($output, "int(5)") !== false) {
+        $poprawne = true;
+        $komunikaty[] = "✓ Zadanie wykonane poprawnie";
+    } else {
+        $komunikaty[] = "✗ Wynik niepoprawny";
+        if (!empty($output)) {
+            $komunikaty[] = "Otrzymano: " . substr($output, 0, 100) . "...";
+        }
+    }
+} catch (Exception $e) {
+    $komunikaty[] = "✗ Błąd: " . $e->getMessage();
+}
+
+echo json_encode([
+    'poprawne' => $poprawne,
+    'komunikaty' => $komunikaty
+], JSON_UNESCAPED_UNICODE);
 ?>

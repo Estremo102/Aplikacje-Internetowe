@@ -1,35 +1,40 @@
-<?php 
-include __DIR__.'\..\rozwiazania\zadanie5.php';
-    $correct = true;
-    if(!isset($pi, $miasto))
-    {
-        echo "Nie wszystkie zmienne zostały zadeklarowane.";
-        $correct = false;
-    }
-    else
-    {
-        if($pi != 3.14)
-        {
-            $correct = false;
-            echo '<br>Zmienna $pi ma niepoprawną wartość.';
+<?php
+header('Content-Type: application/json; charset=utf-8');
+
+$poprawne = false;
+$komunikaty = [];
+
+try {
+    ob_start();
+    include __DIR__ . '/../rozwiazania/zadanie5.php';
+    ob_get_clean();
+    
+    if (!isset($pi, $miasto)) {
+        $komunikaty[] = "✗ Nie wszystkie zmienne zostały zadeklarowane";
+        if (!isset($pi)) $komunikaty[] = "  - brakuje \$pi";
+        if (!isset($miasto)) $komunikaty[] = "  - brakuje \$miasto";
+    } else {
+        $poprawne = true;
+        
+        if ($pi != 3.14) {
+            $poprawne = false;
+            $komunikaty[] = "✗ Zmienna \$pi ma niepoprawną wartość: $pi (oczekiwano: 3.14)";
         }
-        if($miasto != 'Zakopane')
-        {
-            $correct = false;
-            echo '<br>Zmienna $miasto ma niepoprawną wartość';
+        if ($miasto != 'Zakopane') {
+            $poprawne = false;
+            $komunikaty[] = "✗ Zmienna \$miasto ma niepoprawną wartość: $miasto (oczekiwano: Zakopane)";
+        }
+        
+        if ($poprawne) {
+            $komunikaty[] = "✓ Zadanie wykonane poprawnie";
         }
     }
-    if($correct)
-    {
-        $progress++;
-        echo "<Script>
-            if(document.querySelector('#zadanie5 .solution-container').innerText.includes('Zmienna \$pi wynosi 3.14, zmienna \$miasto ma przypisaną wartość \"Zakopane\".'))
-            {
-                this.document.querySelectorAll('nav ul li')[4].classList.add('done');
-                document.write('<br>Zadanie wykonane poprawnie');
-            }else{
-                document.write('<br>Dane nie zostały wyświetlone poprawnie');
-            }
-        </Script>";        
-    }
+} catch (Exception $e) {
+    $komunikaty[] = "✗ Błąd: " . $e->getMessage();
+}
+
+echo json_encode([
+    'poprawne' => $poprawne,
+    'komunikaty' => $komunikaty
+], JSON_UNESCAPED_UNICODE);
 ?>

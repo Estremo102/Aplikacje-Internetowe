@@ -1,40 +1,45 @@
-<?php 
-include __DIR__.'\..\rozwiazania\zadanie2.php';
-    $correct = true;
-    if(!isset($len, $words, $pos))
-    {
-        echo "Nie wszystkie zmienne zostały zadeklarowane.";
-        $correct = false;
-    }
-    else
-    {
-        if($len != 168)
-        {
-            $correct = false;
-            echo '<br>Zmienna $len ma niepoprawną wartość, upewnij się, że sprawdzasz długość tekstu bez cudzysłowia';
+<?php
+header('Content-Type: application/json; charset=utf-8');
+
+$poprawne = false;
+$komunikaty = [];
+
+try {
+    ob_start();
+    include __DIR__ . '/../rozwiazania/zadanie2.php';
+    ob_get_clean();
+    
+    if (!isset($len, $words, $pos)) {
+        $komunikaty[] = "✗ Nie wszystkie zmienne zostały zadeklarowane";
+        if (!isset($len)) $komunikaty[] = "  - brakuje \$len";
+        if (!isset($words)) $komunikaty[] = "  - brakuje \$words";
+        if (!isset($pos)) $komunikaty[] = "  - brakuje \$pos";
+    } else {
+        $poprawne = true;
+        
+        if ($len != 168) {
+            $poprawne = false;
+            $komunikaty[] = "✗ Zmienna \$len ma niepoprawną wartość: $len (oczekiwano: 168)";
         }
-        if($words != 29)
-        {
-            $correct = false;
-            echo '<br>Zmienna $words ma niepoprawną wartość, niepoprawna ilość słów';
+        if ($words != 29) {
+            $poprawne = false;
+            $komunikaty[] = "✗ Zmienna \$words ma niepoprawną wartość: $words (oczekiwano: 29)";
         }
-        if($pos != 72)
-        {
-            $correct = false;
-            echo '<br>Zmienna $pos ma niepoprawną wartość';
+        if ($pos != 72) {
+            $poprawne = false;
+            $komunikaty[] = "✗ Zmienna \$pos ma niepoprawną wartość: $pos (oczekiwano: 72)";
+        }
+        
+        if ($poprawne) {
+            $komunikaty[] = "✓ Zadanie wykonane poprawnie";
         }
     }
-    if($correct)
-    {
-        $progress++;
-        echo "<Script>
-            if(document.querySelector('#zadanie2 .solution-container').innerText.includes('168 29 72'))
-            {
-                this.document.querySelectorAll('nav ul li')[1].classList.add('done');
-                document.write('<br>Zadanie wykonane poprawnie');
-            }else{
-                document.write('<br>Dane nie zostały wyświetlone poprawnie');
-            }
-        </Script>";        
-    }
+} catch (Exception $e) {
+    $komunikaty[] = "✗ Błąd: " . $e->getMessage();
+}
+
+echo json_encode([
+    'poprawne' => $poprawne,
+    'komunikaty' => $komunikaty
+], JSON_UNESCAPED_UNICODE);
 ?>

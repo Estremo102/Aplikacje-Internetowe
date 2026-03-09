@@ -1,8 +1,18 @@
 <?php
+header('Content-Type: application/json; charset=utf-8');
+
+$poprawne = false;
+$komunikaty = [];
+
+try {
     $dbname = null;
-    include __DIR__.'/../zadanie4.php';
-    if(!isset($dbname)) {
-        echo 'zmienna $dbname nie istnieje';
+    
+    ob_start();
+    include __DIR__ . '/../zadanie4.php';
+    ob_get_clean();
+    
+    if (!isset($dbname)) {
+        $komunikaty[] = "✗ Zmienna \$dbname nie istnieje";
     } else {
         $servername = "localhost"; 
         $username = "root"; 
@@ -11,10 +21,19 @@
         try {
             $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Poprawnie utworzono bazę danych $dbname" . "<Script>this.document.querySelectorAll('nav ul li')[3].classList.add('done');</Script>";
-            $progress++;
+            $poprawne = true;
+            $komunikaty[] = "✓ Poprawnie utworzono bazę danych $dbname";
+            $conn = null;
         } catch(PDOException $e) {
-            echo "Błąd połączenia: " . $e->getMessage();
+            $komunikaty[] = "✗ Błąd połączenia: " . $e->getMessage();
         }
     }
+} catch (Exception $e) {
+    $komunikaty[] = "✗ Błąd: " . $e->getMessage();
+}
+
+echo json_encode([
+    'poprawne' => $poprawne,
+    'komunikaty' => $komunikaty
+], JSON_UNESCAPED_UNICODE);
 ?>

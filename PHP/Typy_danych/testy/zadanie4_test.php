@@ -1,20 +1,30 @@
 <?php
-include __DIR__.'\..\rozwiazania\zadanie4.php';
-    $correct = true;
+header('Content-Type: application/json; charset=utf-8');
 
+$poprawne = false;
+$komunikaty = [];
+
+try {
+    ob_start();
+    include __DIR__ . '/../rozwiazania/zadanie4.php';
+    ob_get_clean();
+    
     if (!isset($wynik)) {
-        echo 'Nie utworzono zmiennej wynik';
-        $correct = false;
+        $komunikaty[] = "✗ Nie utworzono zmiennej \$wynik";
     } else {
-        if($wynik != 'Ma-źd')
-        {
-            echo 'Niepoprawny wynik';
-            $correct = false;
+        if ($wynik != 'Ma-źd') {
+            $komunikaty[] = "✗ Zmienna \$wynik ma niepoprawną wartość: \"$wynik\" (oczekiwano: \"Ma-źd\")";
+        } else {
+            $poprawne = true;
+            $komunikaty[] = "✓ Zadanie wykonane poprawnie";
         }
     }
+} catch (Exception $e) {
+    $komunikaty[] = "✗ Błąd: " . $e->getMessage();
+}
 
-    if ($correct) {
-        $progress++;
-        echo 'Zadanie wykonane poprawnie' . "<Script>this.document.querySelectorAll('nav ul li')[3].classList.add('done');</Script>";
-    }
+echo json_encode([
+    'poprawne' => $poprawne,
+    'komunikaty' => $komunikaty
+], JSON_UNESCAPED_UNICODE);
 ?>
