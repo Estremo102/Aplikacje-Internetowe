@@ -210,6 +210,14 @@ button{
     border-radius: 8px;
 }
 
+#run-all-tests{
+    background-color: #0002;
+    border: none;
+    color: #edeeff;
+    margin: auto 5px;
+    padding: auto;
+}
+
 .flex-container{
     display: flex;
     justify-content: center;
