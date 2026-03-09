@@ -13,8 +13,8 @@
     <h4>Instrukcja if</h4>
     if wykonuje kod tylko jeśli warunek logiczny jest prawdziwy
     <pre><code class="language-php">if (warunek_logiczny) {
-        // kod który wykona się jeśli warunek logiczny jest prawdziwy
-    }</code></pre>
+    // kod który wykona się jeśli warunek logiczny jest prawdziwy
+}</code></pre>
     przykład:
     <pre><code class="language-php">$zmienna = true;
         
