@@ -72,15 +72,19 @@
             const container = document.getElementById(`wynik-zad${taskNumber}`);
             if (container) {
                 container.innerHTML = 'Błąd przy ładowaniu wyniku<br>';
-                fetch("runcode.php?src=" + srcPath + "&i=" + taskNumber)
-                .then(r => r.text())
-                .then(t => {
-                    container.innerHTML += t;
-                });
+                let result = await runCode(srcPath, taskNumber);
+                container.innerHTML += result;
             }
         }
     }
 
+    
+
+    async function runCode(src, i) {
+        const response = await fetch(`runcode.php?src=${encodeURIComponent(src)}&i=${i}`);
+        const text = await response.text();
+        return text;
+    }
 
     async function loadTestResults() {
         if (!srcPath) {
