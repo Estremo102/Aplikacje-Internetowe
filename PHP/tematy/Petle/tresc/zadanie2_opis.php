@@ -35,4 +35,5 @@ do {
   echo $i;
   $i++;
 } while ($i < 6);?></code></pre>
+<p>Zadanie: w kodzie masz dostęp do zmiennej $liczba, do której jest przypisana losowa wartość od 1 do 10. Napisz pętle która wypisze wylosowaną liczbę, a następnie dopóki liczba zwiększona o 1 będzie mniejsza lub równa 8 powtórzy operację wypisania i inkrementacji. </p>
 <?php $i = $tempi?>

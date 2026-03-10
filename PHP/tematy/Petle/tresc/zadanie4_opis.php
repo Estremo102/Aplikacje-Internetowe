@@ -105,3 +105,4 @@ $colors = array("red", "green", "blue", "yellow");
 foreach ($colors as $x) :
   echo "$x <br>";
 endforeach;?></code></pre>
+<p>Zadanie: W kodzie masz dostęp do zmiennej $input. Wypisz wszystkie elementy jakie się w niej znajdują.</p>

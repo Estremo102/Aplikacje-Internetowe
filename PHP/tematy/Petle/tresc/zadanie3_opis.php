@@ -38,4 +38,7 @@ for ($i = 0; $i <= 10; $i++) {
 for ($i = 10; $i >= 0; $i--) {
   echo "Liczba wynosi: $i <br>";
 }?></code></pre>
+<p>Zadanie: Pętle można zagnieżdżać, czyli umieszczać jedną pętlę w drugiej.
+Utwórz tablicę $wyniki. Następnie napisz pętlę w pętli, w której obie pętle wykonają się po 5 razy. Podczas każdej iteracji zapisz do tablicy $wyniki iloczyn numerów aktualnych przebiegów obu pętli. <br>
+Przykład efektu: 1, 2, 3, 4, 5, 2, 4, 6, 8, 10, … itd.</p>
 <?php $i = $tempi?>

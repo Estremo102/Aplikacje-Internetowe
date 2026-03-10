@@ -14,4 +14,5 @@ while ($i < 6) {
   echo $i;
   $i++;
 }?></code></pre>
+<p>Zadanie: W kodzie masz dostęp do tablicy $kolory, wypisuj wszystkie elementy do momentu natrafienia na kolor czarny, lub do końca tablicy</p>
 <?php $i = $tempi?>
