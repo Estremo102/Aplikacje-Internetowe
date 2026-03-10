@@ -7,6 +7,7 @@ return [
         ['title' => 'Funkcje matematyczne', 'src' => 'Funkcje_matematyczne'],
         ['title' => 'Stałe w PHP', 'src' => 'Stale'],
         ['title' => 'Instrukcje warunkowe', 'src' => 'Instrukcje_warunkowe'],
+        ['title' => 'Pętle', 'src' => 'Petle'],
     ],
     'PHP + MySQL' => [
         ['title' => 'Połączenie z bazą danych', 'src' => 'polaczenie_z_baza_danych'],

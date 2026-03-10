@@ -6,7 +6,7 @@
             for ($i = 1; $i <= 6; $i++) {
                 echo "<section id=\"zadanie$i\">
                 <h2>Zadanie $i</h2>";
-                include "$src\\zadania\\zadanie${i}_opis.php";
+                include "tematy\\$src\\tresc\\zadanie${i}_opis.php";
                 echo "<button class=\"check-task-btn\" data-task=\"$i\">Sprawdź zadanie</button>";
                 echo "<div class=\"solution-container\" id=\"wynik-zad$i\"></div>";
                 echo '</section>';
@@ -44,7 +44,7 @@
         }
 
         try {
-            const response = await fetch(`test_runner.php?src=${srcPath}&i=${taskNumber}`);
+            const response = await fetch(`${srcPath}/test_runner.php?src=${srcPath}&i=${taskNumber}`);
             const data = await response.json();
 
             const container = document.getElementById(`wynik-zad${taskNumber}`);
