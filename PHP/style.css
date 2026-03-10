@@ -286,3 +286,10 @@ span.error {
     color: #ff0000;
     font-weight: bold;
 }
+
+table, tr, td {
+    border: 2px solid #02074d;
+    border-collapse: collapse;
+    padding: 5px;
+    background-color: #a7abe6;
+}
