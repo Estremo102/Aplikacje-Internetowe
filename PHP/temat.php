@@ -44,7 +44,7 @@
         }
 
         try {
-            const response = await fetch(`${srcPath}/testy/zadanie${taskNumber}_test.php`);
+            const response = await fetch(`test_runner.php?src=${srcPath}&i=${taskNumber}`);
             const data = await response.json();
 
             const container = document.getElementById(`wynik-zad${taskNumber}`);
