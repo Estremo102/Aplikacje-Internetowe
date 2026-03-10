@@ -7,7 +7,7 @@
                 echo "<section id=\"zadanie$i\">
                 <h2>Zadanie $i</h2>";
                 include "$src\\zadania\\zadanie${i}_opis.php";
-                echo "<button class=\"check-task-btn\" data-task=\"$i\" style=\"padding: 0.5rem 1rem; margin: 1rem 0; cursor: pointer;\">Sprawdź to zadanie</button>";
+                echo "<button class=\"check-task-btn\" data-task=\"$i\">Sprawdź zadanie</button>";
                 echo "<div class=\"solution-container\" id=\"wynik-zad$i\"></div>";
                 echo '</section>';
             }
@@ -53,7 +53,7 @@
             if (data.komunikaty && data.komunikaty.length > 0) {
                 container.innerHTML = data.komunikaty.join('<br>');
             } else {
-                container.innerHTML = data.poprawne ? '✓ Zadanie wykonane poprawnie' : '✗ Zadanie zawiera błędy';
+                container.innerHTML = data.poprawne ? 'Zadanie wykonane poprawnie' : 'Zadanie zawiera błędy';
             }
 
             const navButtons = document.querySelectorAll('nav ul li');
@@ -71,7 +71,9 @@
             console.error(`Błąd przy ładowaniu zadania ${taskNumber}:`, error);
             const container = document.getElementById(`wynik-zad${taskNumber}`);
             if (container) {
-                container.innerHTML = '✗ Błąd przy ładowaniu wyniku';
+                container.innerHTML = 'Błąd przy ładowaniu wyniku<br>';
+                // container.innerHTML += ; TODO
+                // uruchamianie pliku za pomocą runcode żeby wyświetlić error
             }
         }
     }

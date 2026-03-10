@@ -230,6 +230,14 @@ button{
     padding: auto;
 }
 
+.check-task-btn{
+    background-color: #0002;
+    border: none;
+    color: #edeeff;
+    margin: auto 5px;
+    padding: auto;
+}
+
 .flex-container{
     display: flex;
     justify-content: center;
