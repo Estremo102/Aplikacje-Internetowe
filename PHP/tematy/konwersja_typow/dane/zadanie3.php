@@ -6,3 +6,4 @@ $d = "km 25";
 $e = "hello";
 $f = true;
 $g = NULL;
+?>

@@ -37,3 +37,4 @@ $wynik = include $test;
 $wynik['output'] = $output;
 
 echo json_encode($wynik, JSON_UNESCAPED_UNICODE);
+?>

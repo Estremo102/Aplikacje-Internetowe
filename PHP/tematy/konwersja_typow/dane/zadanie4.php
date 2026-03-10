@@ -8,3 +8,4 @@ $ff = "hello";
 $gg = "";
 $hh = true;
 $ii = NULL;
+?>

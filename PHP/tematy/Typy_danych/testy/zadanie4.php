@@ -1,8 +1,11 @@
 <?php
 $poprawne = true;
-$komunikaty = ['? Zadanie wykonane'];
+$komunikaty = ['✓ Zadanie wykonane'];
 return [
     'poprawne' => $poprawne,
     'komunikaty' => $komunikaty
 ];
+
+
+?>
 

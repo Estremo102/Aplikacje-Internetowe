@@ -12,3 +12,5 @@ return [
         ['title' => 'Połączenie z bazą danych', 'src' => 'polaczenie_z_baza_danych'],
     ],
 ];
+?>
+

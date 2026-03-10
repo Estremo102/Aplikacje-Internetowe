@@ -6,3 +6,6 @@ return [
     'komunikaty' => $komunikaty
 ];
 
+
+?>
+

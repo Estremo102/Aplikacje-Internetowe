@@ -14,3 +14,4 @@ $c = "hello";
 $d = true;
 $e = NULL;
 $f = new Car("red", "Volvo");
+?>

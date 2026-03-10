@@ -11,3 +11,5 @@ return [
     'poprawne' => $poprawne,
     'komunikaty' => $komunikaty
 ];
+?>
+
