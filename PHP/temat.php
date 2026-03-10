@@ -78,8 +78,6 @@
         }
     }
 
-    
-
     async function runCode(src, i) {
         const response = await fetch(`runcode.php?src=${encodeURIComponent(src)}&i=${i}`);
         const text = await response.text();
