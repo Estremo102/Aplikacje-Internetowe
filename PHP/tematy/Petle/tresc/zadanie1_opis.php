@@ -1,3 +1,4 @@
+<?php $tempi = $i ?>
 <h3>Pętla while</h3>
 <h4>Pętle w PHP</h4>
 <p>
@@ -76,3 +77,4 @@ while ($i < 6):
   $i++;
 endwhile;?></code></pre>
 <p>Zadanie: Napisz pętle która będzie zwiększać licznik o 10 i wykona się 10 razy wypisując liczby 0, 10, 20 ... 90</p>
+<?php $i = $tempi?>

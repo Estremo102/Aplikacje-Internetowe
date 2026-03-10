@@ -1,2 +1,2 @@
-<h3>Opis zadania 2</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid pariatur porro dicta perferendis quibusdam soluta recusandae. Accusantium ducimus perspiciatis velit, vitae tempore ipsum, cum incidunt illum exercitationem fuga repellendus doloribus.</p>
+<h3>Pętla do...while</h3>
+<p>Pętla PHP do...while - przechodzi przez blok kodu co najmniej raz, a następnie powtarza pętlę tak długo, jak długo określony warunek jest prawdziwy.</p>

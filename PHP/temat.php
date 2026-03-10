@@ -6,7 +6,7 @@
             for ($i = 1; $i <= 6; $i++) {
                 echo "<section id=\"zadanie$i\">
                 <h2>Zadanie $i</h2>";
-                include "tematy\\$src\\tresc\\zadanie${i}_opis.php";
+                include __DIR__ . "/tematy/$src/tresc/zadanie${i}_opis.php";
                 echo "<button class=\"check-task-btn\" data-task=\"$i\">Sprawdź zadanie</button>";
                 echo "<div class=\"solution-container\" id=\"wynik-zad$i\"></div>";
                 echo '</section>';
