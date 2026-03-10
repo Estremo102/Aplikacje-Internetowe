@@ -1,4 +1,4 @@
-<?php $tempi = $i ?>
+<?php $tempi = $i?>
 <h3>Pętla while</h3>
 <h4>Pętle w PHP</h4>
 <p>
