@@ -65,6 +65,10 @@
                 container.innerHTML = data.poprawne ? 'Zadanie wykonane poprawnie' : 'Zadanie zawiera błędy';
             }
 
+            if (data.output && data.output.trim() !== "") {
+                container.innerHTML += "<br><strong>Output:</strong><br>" + data.output;
+            }
+
             const navButtons = document.querySelectorAll('nav ul li');
             if (navButtons[taskNumber - 1]) {
                 if (data.poprawne) {
