@@ -33,36 +33,6 @@ while ($i < 6) { // Warunek logiczny
   $i++; // Inkrementacja licznika
 }
 ?></code></pre>
-<h4>break</h4>
-<p>Za pomocą instrukcji break możemy przerwać pętlę, nawet jeśli warunek nadal jest spełniony:</p>
-<pre><code class="language-php">$i = 1;
-while ($i < 6) {
-  if ($i == 3) break;
-  echo $i;
-  $i++;
-}</code></pre>
-<pre><code><?php
-$i = 1;
-while ($i < 6) {
-  if ($i == 3) break;
-  echo $i;
-  $i++;
-}?></code></pre>
-<h4>continue</h4>
-<p>Za pomocą polecenia continue możemy pominąć bieżącą iterację i przejść do następnej:</p>
-<pre><code class="language-php">$i = 0;
-while ($i < 6) {
-  $i++;
-  if ($i == 3) continue;
-  echo $i;
-}</code></pre>
-<pre><code><?php
-$i = 0;
-while ($i < 6) {
-  $i++;
-  if ($i == 3) continue;
-  echo $i;
-}?></code></pre>
 <h4>Alternatywny zapis</h4>
 <p>pętle while można też zapisać w taki sposób:</p>
 <pre><code class="language-php">$i = 1;

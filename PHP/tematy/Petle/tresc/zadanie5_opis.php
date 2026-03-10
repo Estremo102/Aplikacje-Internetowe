@@ -1,2 +1,17 @@
-<h3>Opis zadania 5</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid pariatur porro dicta perferendis quibusdam soluta recusandae. Accusantium ducimus perspiciatis velit, vitae tempore ipsum, cum incidunt illum exercitationem fuga repellendus doloribus.</p>
+<?php $tempi = $i?>
+<h3>break</h3>
+<p>Za pomocą instrukcji break możemy przerwać pętlę, nawet jeśli warunek nadal jest spełniony:</p>
+<pre><code class="language-php">$i = 1;
+while ($i < 6) {
+  if ($i == 3) break;
+  echo $i;
+  $i++;
+}</code></pre>
+<pre><code><?php
+$i = 1;
+while ($i < 6) {
+  if ($i == 3) break;
+  echo $i;
+  $i++;
+}?></code></pre>
+<?php $i = $tempi?>
