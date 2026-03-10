@@ -1,5 +1,14 @@
 <?php
-exec("$php $src\\testy\\zadanie${i}_test.php", $lines, $exitCode);
+$src = $_GET['src'] ?? '';
+$i   = intval($_GET['i']); 
+$src = rtrim($src, "\\/");
+$testFile = "{$src}\\testy\\zadanie{$i}_test.php";
+if (!file_exists($testFile)) {
+    echo "Plik nie istnieje: $testFile";
+    exit;
+}
+$cmd = "C:\\xampp\\php\\php.exe \"$testFile\"";
+exec($cmd, $lines, $exitCode);
 $output = implode("\n", $lines);
 switch ($exitCode) {
     case 0:

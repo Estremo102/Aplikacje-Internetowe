@@ -72,11 +72,15 @@
             const container = document.getElementById(`wynik-zad${taskNumber}`);
             if (container) {
                 container.innerHTML = 'Błąd przy ładowaniu wyniku<br>';
-                // container.innerHTML += ; TODO
-                // uruchamianie pliku za pomocą runcode żeby wyświetlić error
+                fetch("runcode.php?src=" + srcPath + "&i=" + taskNumber)
+                .then(r => r.text())
+                .then(t => {
+                    container.innerHTML += t;
+                });
             }
         }
     }
+
 
     async function loadTestResults() {
         if (!srcPath) {
