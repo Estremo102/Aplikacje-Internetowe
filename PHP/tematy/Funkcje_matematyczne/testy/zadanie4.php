@@ -4,17 +4,18 @@ $komunikaty = [];
 if (isset($c)) {
     if ($c == 5) {
         $poprawne = true;
-        $komunikaty[] = "✓ Zadanie wykonane poprawnie";
+        $komunikaty[] = "Zadanie wykonane poprawnie";
     } else {
-        $komunikaty[] = "✗ Wynik niepoprawny (3, 4)";
-        $komunikaty[] = "Oczekiwane: c = 5, Otrzymane: c = " . $c;
+        $komunikaty[] = "Wynik niepoprawny (3, 4)";
+        $komunikaty[] = "Oczekiwane: c = 5, Otrzymane: c = ". $c;
     }
 } else {
-    $komunikaty[] = "✗ Nie utworzono zmiennej \$c";
+    $komunikaty[] = "Nie utworzono zmiennej \$c";
 }
 return [
     'poprawne' => $poprawne,
     'komunikaty' => $komunikaty
 ];
 ?>
+
 
