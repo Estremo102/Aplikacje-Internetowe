@@ -1,8 +1,8 @@
 <?php
-$src = $_GET['src'] ?? '';
+$src = preg_replace('/[^a-zA-Z0-9_]/', '', $_GET['src'] ?? '');
 $i   = intval($_GET['i']); 
-$src = rtrim($src, "\\/");
-$testFile = "{$src}\\testy\\zadanie{$i}_test.php";
+$base = __DIR__ . "/tematy/$src";
+$testFile = "$base/testy/zadanie{$i}.php";
 if (!file_exists($testFile)) {
     echo "Plik nie istnieje: $testFile";
     exit;

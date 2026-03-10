@@ -44,8 +44,17 @@
         }
 
         try {
-            const response = await fetch(`${srcPath}/test_runner.php?src=${srcPath}&i=${taskNumber}`);
-            const data = await response.json();
+            const response = await fetch(`test_runner.php?src=${srcPath}&i=${taskNumber}`);
+            if (!response.ok) {
+                throw new Error(`HTTP error ${response.status}`);
+            }
+            const text = await response.text();
+            let data;
+            try {
+                data = JSON.parse(text);
+            } catch (parseError) {
+                throw new Error('invalid JSON from server: ' + text);
+            }
 
             const container = document.getElementById(`wynik-zad${taskNumber}`);
             if (!container) return;
