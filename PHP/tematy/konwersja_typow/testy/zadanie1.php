@@ -1,7 +1,4 @@
 <?php
-$poprawne = false;
-$komunikaty = [];
-
 if (!isset($x_converted)) {
     $komunikaty[] = "Zmienna \$x_converted nie istnieje";
 } else {
@@ -12,11 +9,6 @@ if (!isset($x_converted)) {
         $komunikaty[] = "Błąd konwersji. Oczekiwano: ". intval($x) . ", otrzymano: ". $x_converted;
     }
 }
-
-return [
-    'poprawne' => $poprawne,
-    'komunikaty' => $komunikaty
-];
 ?>
 
 

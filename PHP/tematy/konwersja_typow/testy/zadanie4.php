@@ -6,11 +6,6 @@ $poprawne = $output_normalized === "bool(true) bool(true) bool(false) bool(true)
 $komunikaty = $poprawne 
     ? ["Zadanie wykonane poprawnie"]
     : ["Wynik niepoprawny", "Oczekiwane: bool(true) bool(true) bool(false) bool(true) bool(true) bool(true) bool(false) bool(true) bool(false)"];
-
-return [
-    'poprawne' => $poprawne,
-    'komunikaty' => $komunikaty
-];
 ?>
 
 

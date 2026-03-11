@@ -1,8 +1,4 @@
-<?php
-$poprawne = false;
-$komunikaty = [];
-
-if (!isset($x_converted)) {
+<?phpif (!isset($x_converted)) {
     $komunikaty[] = "Zmienna \$x_converted nie istnieje";
 } else {
     if ($x_converted == (int)$x) {
@@ -18,5 +14,3 @@ return [
     'komunikaty' => $komunikaty
 ];
 ?>
-
-

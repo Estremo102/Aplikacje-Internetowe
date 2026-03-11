@@ -1,7 +1,4 @@
 <?php
-    $poprawne = false;
-    $komunikaty = [];
-
     if ($output == "") {
         $komunikaty[] = "Nie wypisano danych, upewnij się, że korzystasz z echo";
     } else {
@@ -11,10 +8,4 @@
         }
     }
     $komunikaty[] = $poprawne ? 'Zadanie wykonane' : 'Zadanie niewykonane';
-    return [
-        'poprawne' => $poprawne,
-        'komunikaty' => $komunikaty
-    ];
 ?>
-
-

@@ -1,6 +1,4 @@
 <?php
-$poprawne = false;
-$komunikaty = [];
 if (isset($c)) {
     if ($c == 5) {
         $poprawne = true;
@@ -12,10 +10,6 @@ if (isset($c)) {
 } else {
     $komunikaty[] = "Nie utworzono zmiennej \$c";
 }
-return [
-    'poprawne' => $poprawne,
-    'komunikaty' => $komunikaty
-];
 ?>
 
 

@@ -28,9 +28,15 @@ if (!file_exists($test)) {
     exit;
 }
 
-$wynik = include $test;
+$poprawne = false;
+$komunikaty = [];
+include $test;
+$wynik = [
+    'poprawne' => $poprawne,
+    'komunikaty' => $komunikaty,
+    'output' => $output
+];
 
-$wynik['output'] = $output;
 
 echo json_encode($wynik, JSON_UNESCAPED_UNICODE);
 ?>
