@@ -47,7 +47,7 @@ function generujKolo() {
         ctx.fillText(items[i], radius - 20, 0);
         ctx.restore();
     }
-    const randomDeg = Math.floor(Math.random() * (2180 - 2000 + 1)) + 2000;
+    const randomDeg = Math.floor(Math.random() * 720) + 2000;
     koloFortuny.style.setProperty('--random-rotate', `${randomDeg}deg`);
 }
 
