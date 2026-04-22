@@ -8,9 +8,9 @@
 // const uczniowie = prompt.split(';');
 // const lista = document.getElementById('lista');
 // Wyswielt();
+const koloFortuny = document.querySelector('#koloFortuny');
 
 function generujKolo() {
-    const koloFortuny = document.querySelector('#koloFortuny');
     const ctx = koloFortuny.getContext('2d');
     const input = document.getElementById('itemsInput');
     const items = input.value.split(';').filter(item => item.trim() !== '');
@@ -47,6 +47,9 @@ function generujKolo() {
         ctx.fillText(items[i], radius - 20, 0);
         ctx.restore();
     }
+}
+
+function Losuj() {
     const randomDeg = Math.floor(Math.random() * 720) + 2000;
     koloFortuny.style.setProperty('--random-rotate', `${randomDeg}deg`);
 }
@@ -59,17 +62,17 @@ function Wyswielt()
     }
 }
 
-function Losuj(strikes){
-    Wyswielt();
-    let uczniowie = document.querySelectorAll("#lista .uczen");
-    let random;
-    if(arguments.length == 0){
-        random = Math.floor(Math.random()*uczniowie.length);
-    }else{
-        random = strikes%uczniowie.length;
-    }
-    uczniowie[random].id = "wylosowanyUczen";
-}
+// function Losuj(strikes){
+//     Wyswielt();
+//     let uczniowie = document.querySelectorAll("#lista .uczen");
+//     let random;
+//     if(arguments.length == 0){
+//         random = Math.floor(Math.random()*uczniowie.length);
+//     }else{
+//         random = strikes%uczniowie.length;
+//     }
+//     uczniowie[random].id = "wylosowanyUczen";
+// }
 
 function WprowadzIloscPiorunow(){
     Losuj(window.prompt("Podaj ilość piorunów"));
