@@ -1,6 +1,7 @@
     <div class="navbox">
         <nav>
             <ul>
+                <button id="run-all-tests">></button>
                 <li><a href="#zadanie1">Zadanie 1</a></li>
                 <li><a href="#zadanie2">Zadanie 2</a></li>
                 <li><a href="#zadanie3">Zadanie 3</a></li>

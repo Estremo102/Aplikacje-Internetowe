@@ -104,12 +104,21 @@ a{
     }
 } 
 @media only screen and (min-width: 1200px) {
-    aside.left, .main{
+    aside.left, .main {
         width: 25%;
         min-height: 80vh;
     }
-    aside.right{
+    aside.right {
         width: 50%;
         min-height: 80vh;
     }
+}
+
+#koloFortuny {
+    transition: transform 0s ease-out;
+}
+
+#koloFortuny:hover {
+    transform: rotate(var(--random-rotate, 0deg));
+    transition: transform 5s ease-out;
 }
