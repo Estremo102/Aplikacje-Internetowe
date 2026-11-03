@@ -1,23 +1,39 @@
 //rozwiązanie zadania 4 umieść wewnątrz tej funkcji
 function zadanie4() {
     const rgb = document.querySelector("#RGB");
-    window.addEventListener("keydown", e => {
-        if(e.key === "r") {
-            rgb.style.backgroundColor = "red";
+    // window.addEventListener("keydown", e => {
+    //     if(e.key === "r") {
+    //         rgb.style.backgroundColor = "red";
+    //     }
+    //     else if(e.key === "g") {
+    //         rgb.style.backgroundColor = "green";
+    //     }
+    //     else if(e.key === "b") {
+    //         rgb.style.backgroundColor = "blue";
+    //     }
+    //     // else if(e.code === "KeyG") {
+    //     //     rgb.style.backgroundColor = "green";
+    //     // }
+    //     // else if(e.keyCode === 66) {
+    //     //     rgb.style.backgroundColor = "blue";
+    //     // }
+    // });
+    window.addEventListener('keydown', e => {
+        switch (e.key) {
+            case "r":
+                rgb.style.backgroundColor = "red";
+                break;
+            case "g":
+                rgb.style.backgroundColor = "green";
+                break;
+            case "b":
+                rgb.style.backgroundColor = "blue";
+                break;
+            default:
+                rgb.style.backgroundColor = "#CCC";
+                break;
         }
-        else if(e.key === "g") {
-            rgb.style.backgroundColor = "green";
-        }
-        else if(e.key === "b") {
-            rgb.style.backgroundColor = "blue";
-        }
-        // else if(e.code === "KeyG") {
-        //     rgb.style.backgroundColor = "green";
-        // }
-        // else if(e.keyCode === 66) {
-        //     rgb.style.backgroundColor = "blue";
-        // }
-    });
+    })
 }
 zadanie4();
 
