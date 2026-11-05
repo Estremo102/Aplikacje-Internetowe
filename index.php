@@ -7,5 +7,9 @@
 </head>
 <body>
     <h1>Jak uruchomić stronę w php</h1>
+    <p>Zacznijmy od klasycznego hello world.</p>
+    <?php 
+        echo "Witaj świecie!";
+    ?>
 </body>
 </html>
